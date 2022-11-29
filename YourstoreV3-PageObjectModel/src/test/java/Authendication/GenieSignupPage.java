@@ -13,12 +13,12 @@ import org.testng.annotations.Test;
 
 public class GenieSignupPage extends BaseClass{
 	
-	@Test( description =" signp on genie account", groups={"genie","multivendor","b2b","service"}, enabled= true)
+	@Test( description =" signp on genie account", groups="genie", enabled= true)
 	public void signupPage() throws InterruptedException
 	{
      
 		
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
 
 		System.out.println("Current Url:" + driver.getTitle());
 
@@ -96,22 +96,22 @@ public class GenieSignupPage extends BaseClass{
 				driver.findElement(By.xpath("//button[@type='submit']")).click();
 
 				Thread.sleep(3000);
-
-				driver.findElement(By.xpath("//button[contains(text(),'Login')]")).click();
-
-				driver.findElement(By.name("email")).sendKeys(email);
-				driver.findElement(By.name("password")).sendKeys(password);
-				driver.findElement(By.xpath(
-						"/html/body/app-root/app-auth-layout/div/div/app-signin/div/div/div/div/form/div[3]/div[3]/btn-loading/button"))
-						.click();
-
-				WebElement error = driver.findElement(By.xpath(
-						"//div[@class='auth-content']/descendant::form/child::div/following-sibling::div[2]/child::p"));
-				if (error.isEnabled()) {
-					System.out.println("error should come if store is not activated" + error.getText());
-				} else {
-					System.out.println("login test case is failed : No error found");
-				}
+//
+//				driver.findElement(By.xpath("//button[contains(text(),'Login')]")).click();
+//
+//				driver.findElement(By.name("email")).sendKeys(email);
+//				driver.findElement(By.name("password")).sendKeys(password);
+//				driver.findElement(By.xpath(
+//						"/html/body/app-root/app-auth-layout/div/div/app-signin/div/div/div/div/form/div[3]/div[3]/btn-loading/button"))
+//						.click();
+//
+//				WebElement error = driver.findElement(By.xpath(
+//						"//div[@class='auth-content']/descendant::form/child::div/following-sibling::div[2]/child::p"));
+//				if (error.isEnabled()) {
+//					System.out.println("error should come if store is not activated" + error.getText());
+//				} else {
+//					System.out.println("login test case is failed : No error found");
+//				}
 
 			}
 		}

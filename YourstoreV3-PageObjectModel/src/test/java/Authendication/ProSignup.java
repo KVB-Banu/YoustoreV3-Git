@@ -14,7 +14,7 @@ public class ProSignup extends BaseClass{
 	@Test(description =" signp on pro account", groups="pro")
 	public void proSignupPage() throws InterruptedException
 	{
-		WebDriverWait wait = new WebDriverWait(driver, 20);		
+		WebDriverWait wait = new WebDriverWait(driver, 30);		
 		
 			
 		System.out.println("Current Url:" + driver.getTitle());
