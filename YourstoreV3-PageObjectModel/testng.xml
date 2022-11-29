@@ -6,7 +6,7 @@
     <classes>
       <class name="Authendication.Signup"/>
       <class name="Authendication.ProSignup"/>
-      <class name="Authendication.GenieSignupPage"/>
+      
       
      
     </classes>
