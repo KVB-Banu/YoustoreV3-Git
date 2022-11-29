@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="suite">
+<suite name="Suite">
   <test thread-count="5" name="Test">
   <groups>
   <run>
-  <include name="Genie"></include>
+  
+  <exclude name="pro"></exclude>
   
   </run>
   
-  
   </groups>
-
     <classes>
-      <class name="Authendication.Signup"/>
-      <class name="Authendication.ProSignup"/>
-      <class name="Authendication.GenieSignupPage"/>
+       <class name="Authendication.Signup"/>
+       <class name="Authendication.GenieSignupPage"/>
+       <class name="Authendication.Prosignupbutton"/>
+       <class name="Authendication.ProSignup"/>
+       
+       
       
-      
-     
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
