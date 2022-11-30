@@ -51,7 +51,7 @@ public class ProSignup extends BaseClass{
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		Thread.sleep(5000);
 	
-		
+		//
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='signup-card']/child::app-signup/descendant::form/descendant::input[@name='store_name']")));
     	driver.findElement(By.xpath("//div[@class='signup-card']/child::app-signup/descendant::form/descendant::input[@name='store_name']")).sendKeys(store_name);
     	Select s1 = new Select(driver.findElement(By.name("country")));
