@@ -4,10 +4,10 @@
   <test thread-count="5" name="smoke">
   
     <classes>
-     
-          
+              
       <class name="addproduct.AddProduct"/>
       
     </classes>
+    
   </test> <!-- smoke -->
 </suite> <!-- AddProduct -->

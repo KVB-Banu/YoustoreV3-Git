@@ -5,12 +5,9 @@
     <classes>
       <class name="addproduct.AddProduct">
         <methods>
-          <include name="openBrowser"/>
-          <include name="sizechart"/>
-          <include name="add"/>
           <include name="openUrl"/>
-          <include name="submit"/>
-          <include name="advancedOptions"/>
+          <include name="add"/>
+          <include name="openBrowser"/>
         </methods>
       </class> <!-- addproduct.AddProduct -->
     </classes>
