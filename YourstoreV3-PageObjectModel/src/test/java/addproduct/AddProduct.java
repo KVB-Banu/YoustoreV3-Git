@@ -97,14 +97,14 @@ public class AddProduct extends BaseClass {
 		if(i%2==0)
 		{
 			Runtime.getRuntime().exec("C:\\Users\\white\\OneDrive\\Desktop\\Jewel images\\image7.exe");
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@role='document']/descendant::span[3]")));
 			driver.findElement(By.xpath("//div[@role='document']/descendant::span[3]")).click();//click on Crop
 			
 		}
 		
 		Runtime.getRuntime().exec("C:\\Users\\white\\OneDrive\\Desktop\\Jewel images\\image1.exe");
-		Thread.sleep(1000);
+		Thread.sleep(4000);
 		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@role='document']/descendant::button[contains(text(),'Save')]")));
 		driver.findElement(By.xpath("//div[@role='document']/descendant::button[contains(text(),'Save')]")).click();// click on save
