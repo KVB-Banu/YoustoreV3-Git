@@ -38,8 +38,8 @@ public class GenieSignupPage extends BaseClass{
 				System.out.println(driver.switchTo().window(child_window).getTitle());
 				
 				Random rand = new Random();
-				int random = rand.nextInt(100);
-				String email = "banuyourstore@"+ random + "gmail.com";
+				int random = rand.nextInt(1000);
+				String email = "test@"+ random + "gmail.com";
 
 				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='Your full name']")));
 				driver.findElement(By.xpath("//input[@placeholder='Your full name']")).sendKeys(name);

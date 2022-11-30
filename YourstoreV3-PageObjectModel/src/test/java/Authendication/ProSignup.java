@@ -39,8 +39,8 @@ public class ProSignup extends BaseClass{
 //		public void email()
 		
 			Random rand = new Random();
-			int random = rand.nextInt(100);
-			String email = "banuyourstore@"+ random + "gmail.com";
+			int random = rand.nextInt(1000);
+			String email = "test@"+ random + "gmail.com";
 		
 		
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='Your full name']")));
