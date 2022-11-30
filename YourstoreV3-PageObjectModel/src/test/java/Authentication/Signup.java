@@ -1,4 +1,4 @@
-package Authendication;
+package Authentication;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

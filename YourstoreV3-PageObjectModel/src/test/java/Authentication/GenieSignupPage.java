@@ -1,4 +1,4 @@
-package Authendication;
+package Authentication;
 
 import java.util.Iterator;
 import java.util.Random;
