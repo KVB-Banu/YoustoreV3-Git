@@ -71,7 +71,7 @@ public class AddProduct extends BaseClass {
 	@Test(priority=1,groups="addproduct")
 	public void add() throws Exception  {
 		
-		WebDriverWait wait = new WebDriverWait(driver,20);
+		WebDriverWait wait = new WebDriverWait(driver,50);
 		
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='accordion menu-scroll']/child::div[2]/descendant::span[contains(text(),'Products')]")));
 		driver.findElement(By.xpath("//div[@class='accordion menu-scroll']/child::div[2]/descendant::span[contains(text(),'Products')]")).click();
@@ -201,7 +201,7 @@ public class AddProduct extends BaseClass {
 	@Test(priority=2,groups="addproduct", enabled=false)
 	public void variant() throws Exception
 	{
-		WebDriverWait wait = new WebDriverWait(driver,20);
+		WebDriverWait wait = new WebDriverWait(driver,50);
 		Actions ac= new Actions(driver);
 		
 		 //clicking on apply variant
@@ -264,7 +264,7 @@ public class AddProduct extends BaseClass {
 	@Test(priority=3,groups="addproduct")
 	public void advancedOptions() throws InterruptedException {
 		
-		WebDriverWait wait = new WebDriverWait(driver,20);
+		WebDriverWait wait = new WebDriverWait(driver,50);
 		Actions ac= new Actions(driver);
 		 
 		 driver.findElement(By.name("brand")).sendKeys("GRT"); // Brand name
@@ -316,7 +316,7 @@ public class AddProduct extends BaseClass {
 	@Test(priority=5,groups="addproduct")
 	public void sizechart() throws InterruptedException {
 		 // click on size chart
-		WebDriverWait wait = new WebDriverWait(driver,20);
+		WebDriverWait wait = new WebDriverWait(driver,50);
 		Actions ac= new Actions(driver);
 		
 		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//span[normalize-space()='Apply Size Chart']")));
@@ -357,7 +357,7 @@ public class AddProduct extends BaseClass {
 	}
 		 @Test(priority=6,groups="addproduct", enabled=false)
 			public void footnote() throws InterruptedException {
-			 WebDriverWait wait = new WebDriverWait(driver,20);
+			 WebDriverWait wait = new WebDriverWait(driver,50);
 				Actions ac= new Actions(driver);
 		 
 		 // apply foot notes
