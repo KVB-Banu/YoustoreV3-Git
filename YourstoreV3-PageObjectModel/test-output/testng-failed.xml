@@ -1,15 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [AddProduct]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="smoke(failed)">
+<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="tests" name="Test(failed)">
     <classes>
+      <class name="Authentication.ProSignup">
+        <methods>
+          <include name="openBrowser"/>
+          <include name="proSignupPage"/>
+          <include name="openUrl"/>
+        </methods>
+      </class> <!-- Authentication.ProSignup -->
       <class name="addproduct.AddProduct">
         <methods>
           <include name="openUrl"/>
+          <include name="sizechart"/>
           <include name="add"/>
           <include name="openBrowser"/>
+          <include name="submit"/>
+          <include name="advancedOptions"/>
         </methods>
       </class> <!-- addproduct.AddProduct -->
+      <class name="Authentication.Prosignupbutton">
+        <methods>
+          <include name="openBrowser"/>
+          <include name="proSignup"/>
+          <include name="openUrl"/>
+        </methods>
+      </class> <!-- Authentication.Prosignupbutton -->
     </classes>
-  </test> <!-- smoke(failed) -->
-</suite> <!-- Failed suite [AddProduct] -->
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
