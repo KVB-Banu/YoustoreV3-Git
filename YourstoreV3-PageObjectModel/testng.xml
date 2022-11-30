@@ -6,7 +6,7 @@
   <run>
   
   <exclude name="genie"></exclude>
-  <include name="pro"></include>
+  
   
   </run>
   
