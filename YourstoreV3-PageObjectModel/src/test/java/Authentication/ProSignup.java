@@ -1,6 +1,6 @@
 package Authentication;
 
-import java.util.Random;
+import java.util.Random; 
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -14,7 +14,7 @@ public class ProSignup extends BaseClass{
 	@Test(description =" signp on pro account", groups="pro")
 	public void proSignupPage() throws InterruptedException
 	{
-		WebDriverWait wait = new WebDriverWait(driver, 50);		
+		WebDriverWait wait = new WebDriverWait(driver, 100);		
 		
 			
 		System.out.println("Current Url:" + driver.getTitle());

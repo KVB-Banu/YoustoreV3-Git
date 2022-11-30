@@ -18,7 +18,7 @@ public class GenieSignupPage extends BaseClass{
 	{
      
 		
-		WebDriverWait wait = new WebDriverWait(driver, 30);
+		WebDriverWait wait = new WebDriverWait(driver, 100);
 
 		System.out.println("Current Url:" + driver.getTitle());
 
