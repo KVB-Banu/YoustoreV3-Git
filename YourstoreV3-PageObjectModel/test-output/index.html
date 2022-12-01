@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-skipped">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>C:\Users\white\git\YoustoreV3-Git\YourstoreV3-PageObjectModel\testng.xml</span>
+                    <span>C:\Users\white\git\YoustoreV3-Git\YourstoreV3-PageObjectModel\testng4.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -61,7 +61,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Suite" class="navigator-link ">
-                    <span>1 group</span>
+                    <span>2 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,26 +93,61 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">9 methods,  9 skipped,  </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods skipped suite-Suite"> (hide)</a> <!-- hide-methods skipped suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
                     </span>
-                    <div class="method-list-content passed suite-Suite">
+                    <div class="method-list-content skipped suite-Suite">
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="Authentication.Signup" class="method navigator-link" hash-for-method="genieSignup">genieSignup</a> <!-- method navigator-link -->
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="orders.CancelledOrders" class="method navigator-link" hash-for-method="cancelOrder">cancelOrder</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="Authentication.GenieSignupPage" class="method navigator-link" hash-for-method="signupPage">signupPage</a> <!-- method navigator-link -->
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="orders.CancelledOrders" class="method navigator-link" hash-for-method="cancelledOrder">cancelledOrder</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Suite -->
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="orders.LiveOrders" class="method navigator-link" hash-for-method="courierPartner">courierPartner</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="orders.LiveOrders" class="method navigator-link" hash-for-method="liveOrders">liveOrders</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="orders.CancelledOrders" class="method navigator-link" hash-for-method="liveorders">liveorders</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="orders.LiveOrders" class="method navigator-link" hash-for-method="markAsPaid">markAsPaid</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="orders.LiveOrders" class="method navigator-link" hash-for-method="statusConfirmed">statusConfirmed</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="orders.LiveOrders" class="method navigator-link" hash-for-method="statusDelivered">statusDelivered</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="orders.LiveOrders" class="method navigator-link" hash-for-method="statusDispatched">statusDispatched</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -124,44 +159,593 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-passed">
+          <div class="suite-Suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">Authentication.Signup</span>
+              <img src="skipped.png"/>
+              <span class="class-name">orders.LiveOrders</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="genieSignup">
-                  </a> <!-- genieSignup -->
-                  <span class="method-name">genieSignup</span>
+                  <a name="courierPartner">
+                  </a> <!-- courierPartner -->
+                  <span class="method-name">courierPartner</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: unknown error: Chrome failed to start: exited normally.
+  (unknown error: DevToolsActivePort file doesn&apos;t exist)
+  (The process started from chrome location C:\Program Files\Google\Chrome\Application\chrome.exe is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-8O9USS3&apos;, ip: &apos;172.16.1.18&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x01051ED3+2236115]
+	Ordinal0 [0x00FE92F1+1807089]
+	Ordinal0 [0x00EF66FD+812797]
+	Ordinal0 [0x00F158F9+940281]
+	Ordinal0 [0x00F119C9+924105]
+	Ordinal0 [0x00F4806C+1146988]
+	Ordinal0 [0x00F47A6A+1145450]
+	Ordinal0 [0x00F418A6+1120422]
+	Ordinal0 [0x00F1A73D+960317]
+	Ordinal0 [0x00F1B71F+964383]
+	GetHandleVerifier [0x012FE7E2+2743074]
+	GetHandleVerifier [0x012F08D4+2685972]
+	GetHandleVerifier [0x010E2BAA+532202]
+	GetHandleVerifier [0x010E1990+527568]
+	Ordinal0 [0x00FF080C+1837068]
+	Ordinal0 [0x00FF4CD8+1854680]
+	Ordinal0 [0x00FF4DC5+1854917]
+	Ordinal0 [0x00FFED64+1895780]
+	BaseThreadInitThunk [0x75DDFEF9+25]
+	RtlGetAppContainerNamedObjectPath [0x76FE7BBE+286]
+	RtlGetAppContainerNamedObjectPath [0x76FE7B8E+238]
+
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1002)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
+	at orders.BaseClass.openBrowser(BaseClass.java:44)
+... Removed 24 stack frames
+</div> <!-- stack-trace -->
                   <em>
-(signup on genie)                  </em>
+(Courier Partner)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="liveOrders">
+                  </a> <!-- liveOrders -->
+                  <span class="method-name">liveOrders</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: unknown error: Chrome failed to start: exited normally.
+  (unknown error: DevToolsActivePort file doesn&apos;t exist)
+  (The process started from chrome location C:\Program Files\Google\Chrome\Application\chrome.exe is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-8O9USS3&apos;, ip: &apos;172.16.1.18&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x01051ED3+2236115]
+	Ordinal0 [0x00FE92F1+1807089]
+	Ordinal0 [0x00EF66FD+812797]
+	Ordinal0 [0x00F158F9+940281]
+	Ordinal0 [0x00F119C9+924105]
+	Ordinal0 [0x00F4806C+1146988]
+	Ordinal0 [0x00F47A6A+1145450]
+	Ordinal0 [0x00F418A6+1120422]
+	Ordinal0 [0x00F1A73D+960317]
+	Ordinal0 [0x00F1B71F+964383]
+	GetHandleVerifier [0x012FE7E2+2743074]
+	GetHandleVerifier [0x012F08D4+2685972]
+	GetHandleVerifier [0x010E2BAA+532202]
+	GetHandleVerifier [0x010E1990+527568]
+	Ordinal0 [0x00FF080C+1837068]
+	Ordinal0 [0x00FF4CD8+1854680]
+	Ordinal0 [0x00FF4DC5+1854917]
+	Ordinal0 [0x00FFED64+1895780]
+	BaseThreadInitThunk [0x75DDFEF9+25]
+	RtlGetAppContainerNamedObjectPath [0x76FE7BBE+286]
+	RtlGetAppContainerNamedObjectPath [0x76FE7B8E+238]
+
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1002)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
+	at orders.BaseClass.openBrowser(BaseClass.java:44)
+... Removed 24 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(liveorders)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="markAsPaid">
+                  </a> <!-- markAsPaid -->
+                  <span class="method-name">markAsPaid</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: unknown error: Chrome failed to start: exited normally.
+  (unknown error: DevToolsActivePort file doesn&apos;t exist)
+  (The process started from chrome location C:\Program Files\Google\Chrome\Application\chrome.exe is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-8O9USS3&apos;, ip: &apos;172.16.1.18&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x01051ED3+2236115]
+	Ordinal0 [0x00FE92F1+1807089]
+	Ordinal0 [0x00EF66FD+812797]
+	Ordinal0 [0x00F158F9+940281]
+	Ordinal0 [0x00F119C9+924105]
+	Ordinal0 [0x00F4806C+1146988]
+	Ordinal0 [0x00F47A6A+1145450]
+	Ordinal0 [0x00F418A6+1120422]
+	Ordinal0 [0x00F1A73D+960317]
+	Ordinal0 [0x00F1B71F+964383]
+	GetHandleVerifier [0x012FE7E2+2743074]
+	GetHandleVerifier [0x012F08D4+2685972]
+	GetHandleVerifier [0x010E2BAA+532202]
+	GetHandleVerifier [0x010E1990+527568]
+	Ordinal0 [0x00FF080C+1837068]
+	Ordinal0 [0x00FF4CD8+1854680]
+	Ordinal0 [0x00FF4DC5+1854917]
+	Ordinal0 [0x00FFED64+1895780]
+	BaseThreadInitThunk [0x75DDFEF9+25]
+	RtlGetAppContainerNamedObjectPath [0x76FE7BBE+286]
+	RtlGetAppContainerNamedObjectPath [0x76FE7B8E+238]
+
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1002)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
+	at orders.BaseClass.openBrowser(BaseClass.java:44)
+... Removed 24 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Mark as paid)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="statusConfirmed">
+                  </a> <!-- statusConfirmed -->
+                  <span class="method-name">statusConfirmed</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: unknown error: Chrome failed to start: exited normally.
+  (unknown error: DevToolsActivePort file doesn&apos;t exist)
+  (The process started from chrome location C:\Program Files\Google\Chrome\Application\chrome.exe is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-8O9USS3&apos;, ip: &apos;172.16.1.18&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x01051ED3+2236115]
+	Ordinal0 [0x00FE92F1+1807089]
+	Ordinal0 [0x00EF66FD+812797]
+	Ordinal0 [0x00F158F9+940281]
+	Ordinal0 [0x00F119C9+924105]
+	Ordinal0 [0x00F4806C+1146988]
+	Ordinal0 [0x00F47A6A+1145450]
+	Ordinal0 [0x00F418A6+1120422]
+	Ordinal0 [0x00F1A73D+960317]
+	Ordinal0 [0x00F1B71F+964383]
+	GetHandleVerifier [0x012FE7E2+2743074]
+	GetHandleVerifier [0x012F08D4+2685972]
+	GetHandleVerifier [0x010E2BAA+532202]
+	GetHandleVerifier [0x010E1990+527568]
+	Ordinal0 [0x00FF080C+1837068]
+	Ordinal0 [0x00FF4CD8+1854680]
+	Ordinal0 [0x00FF4DC5+1854917]
+	Ordinal0 [0x00FFED64+1895780]
+	BaseThreadInitThunk [0x75DDFEF9+25]
+	RtlGetAppContainerNamedObjectPath [0x76FE7BBE+286]
+	RtlGetAppContainerNamedObjectPath [0x76FE7B8E+238]
+
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1002)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
+	at orders.BaseClass.openBrowser(BaseClass.java:44)
+... Removed 24 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Status Confirmed)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="statusDelivered">
+                  </a> <!-- statusDelivered -->
+                  <span class="method-name">statusDelivered</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: unknown error: Chrome failed to start: exited normally.
+  (unknown error: DevToolsActivePort file doesn&apos;t exist)
+  (The process started from chrome location C:\Program Files\Google\Chrome\Application\chrome.exe is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-8O9USS3&apos;, ip: &apos;172.16.1.18&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x01051ED3+2236115]
+	Ordinal0 [0x00FE92F1+1807089]
+	Ordinal0 [0x00EF66FD+812797]
+	Ordinal0 [0x00F158F9+940281]
+	Ordinal0 [0x00F119C9+924105]
+	Ordinal0 [0x00F4806C+1146988]
+	Ordinal0 [0x00F47A6A+1145450]
+	Ordinal0 [0x00F418A6+1120422]
+	Ordinal0 [0x00F1A73D+960317]
+	Ordinal0 [0x00F1B71F+964383]
+	GetHandleVerifier [0x012FE7E2+2743074]
+	GetHandleVerifier [0x012F08D4+2685972]
+	GetHandleVerifier [0x010E2BAA+532202]
+	GetHandleVerifier [0x010E1990+527568]
+	Ordinal0 [0x00FF080C+1837068]
+	Ordinal0 [0x00FF4CD8+1854680]
+	Ordinal0 [0x00FF4DC5+1854917]
+	Ordinal0 [0x00FFED64+1895780]
+	BaseThreadInitThunk [0x75DDFEF9+25]
+	RtlGetAppContainerNamedObjectPath [0x76FE7BBE+286]
+	RtlGetAppContainerNamedObjectPath [0x76FE7B8E+238]
+
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1002)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
+	at orders.BaseClass.openBrowser(BaseClass.java:44)
+... Removed 24 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Status Delivered)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="statusDispatched">
+                  </a> <!-- statusDispatched -->
+                  <span class="method-name">statusDispatched</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: unknown error: Chrome failed to start: exited normally.
+  (unknown error: DevToolsActivePort file doesn&apos;t exist)
+  (The process started from chrome location C:\Program Files\Google\Chrome\Application\chrome.exe is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-8O9USS3&apos;, ip: &apos;172.16.1.18&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x01051ED3+2236115]
+	Ordinal0 [0x00FE92F1+1807089]
+	Ordinal0 [0x00EF66FD+812797]
+	Ordinal0 [0x00F158F9+940281]
+	Ordinal0 [0x00F119C9+924105]
+	Ordinal0 [0x00F4806C+1146988]
+	Ordinal0 [0x00F47A6A+1145450]
+	Ordinal0 [0x00F418A6+1120422]
+	Ordinal0 [0x00F1A73D+960317]
+	Ordinal0 [0x00F1B71F+964383]
+	GetHandleVerifier [0x012FE7E2+2743074]
+	GetHandleVerifier [0x012F08D4+2685972]
+	GetHandleVerifier [0x010E2BAA+532202]
+	GetHandleVerifier [0x010E1990+527568]
+	Ordinal0 [0x00FF080C+1837068]
+	Ordinal0 [0x00FF4CD8+1854680]
+	Ordinal0 [0x00FF4DC5+1854917]
+	Ordinal0 [0x00FFED64+1895780]
+	BaseThreadInitThunk [0x75DDFEF9+25]
+	RtlGetAppContainerNamedObjectPath [0x76FE7BBE+286]
+	RtlGetAppContainerNamedObjectPath [0x76FE7B8E+238]
+
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1002)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
+	at orders.BaseClass.openBrowser(BaseClass.java:44)
+... Removed 24 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Status Dispatched)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
-          <div class="suite-Suite-class-passed">
+          </div> <!-- suite-Suite-class-skipped -->
+          <div class="suite-Suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">Authentication.GenieSignupPage</span>
+              <img src="skipped.png"/>
+              <span class="class-name">orders.CancelledOrders</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="signupPage">
-                  </a> <!-- signupPage -->
-                  <span class="method-name">signupPage</span>
+                  <a name="cancelOrder">
+                  </a> <!-- cancelOrder -->
+                  <span class="method-name">cancelOrder</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: unknown error: Chrome failed to start: exited normally.
+  (unknown error: DevToolsActivePort file doesn&apos;t exist)
+  (The process started from chrome location C:\Program Files\Google\Chrome\Application\chrome.exe is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-8O9USS3&apos;, ip: &apos;172.16.1.18&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x01051ED3+2236115]
+	Ordinal0 [0x00FE92F1+1807089]
+	Ordinal0 [0x00EF66FD+812797]
+	Ordinal0 [0x00F158F9+940281]
+	Ordinal0 [0x00F119C9+924105]
+	Ordinal0 [0x00F4806C+1146988]
+	Ordinal0 [0x00F47A6A+1145450]
+	Ordinal0 [0x00F418A6+1120422]
+	Ordinal0 [0x00F1A73D+960317]
+	Ordinal0 [0x00F1B71F+964383]
+	GetHandleVerifier [0x012FE7E2+2743074]
+	GetHandleVerifier [0x012F08D4+2685972]
+	GetHandleVerifier [0x010E2BAA+532202]
+	GetHandleVerifier [0x010E1990+527568]
+	Ordinal0 [0x00FF080C+1837068]
+	Ordinal0 [0x00FF4CD8+1854680]
+	Ordinal0 [0x00FF4DC5+1854917]
+	Ordinal0 [0x00FFED64+1895780]
+	BaseThreadInitThunk [0x75DDFEF9+25]
+	RtlGetAppContainerNamedObjectPath [0x76FE7BBE+286]
+	RtlGetAppContainerNamedObjectPath [0x76FE7B8E+238]
+
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1002)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
+	at orders.BaseClass.openBrowser(BaseClass.java:44)
+... Removed 24 stack frames
+</div> <!-- stack-trace -->
                   <em>
-( signp on genie account)                  </em>
+(clicking on cancel order in liveorder section)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="cancelledOrder">
+                  </a> <!-- cancelledOrder -->
+                  <span class="method-name">cancelledOrder</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: unknown error: Chrome failed to start: exited normally.
+  (unknown error: DevToolsActivePort file doesn&apos;t exist)
+  (The process started from chrome location C:\Program Files\Google\Chrome\Application\chrome.exe is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-8O9USS3&apos;, ip: &apos;172.16.1.18&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x01051ED3+2236115]
+	Ordinal0 [0x00FE92F1+1807089]
+	Ordinal0 [0x00EF66FD+812797]
+	Ordinal0 [0x00F158F9+940281]
+	Ordinal0 [0x00F119C9+924105]
+	Ordinal0 [0x00F4806C+1146988]
+	Ordinal0 [0x00F47A6A+1145450]
+	Ordinal0 [0x00F418A6+1120422]
+	Ordinal0 [0x00F1A73D+960317]
+	Ordinal0 [0x00F1B71F+964383]
+	GetHandleVerifier [0x012FE7E2+2743074]
+	GetHandleVerifier [0x012F08D4+2685972]
+	GetHandleVerifier [0x010E2BAA+532202]
+	GetHandleVerifier [0x010E1990+527568]
+	Ordinal0 [0x00FF080C+1837068]
+	Ordinal0 [0x00FF4CD8+1854680]
+	Ordinal0 [0x00FF4DC5+1854917]
+	Ordinal0 [0x00FFED64+1895780]
+	BaseThreadInitThunk [0x75DDFEF9+25]
+	RtlGetAppContainerNamedObjectPath [0x76FE7BBE+286]
+	RtlGetAppContainerNamedObjectPath [0x76FE7B8E+238]
+
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1002)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
+	at orders.BaseClass.openBrowser(BaseClass.java:44)
+... Removed 24 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Cancelled order section)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="liveorders">
+                  </a> <!-- liveorders -->
+                  <span class="method-name">liveorders</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: unknown error: Chrome failed to start: exited normally.
+  (unknown error: DevToolsActivePort file doesn&apos;t exist)
+  (The process started from chrome location C:\Program Files\Google\Chrome\Application\chrome.exe is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-8O9USS3&apos;, ip: &apos;172.16.1.18&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x01051ED3+2236115]
+	Ordinal0 [0x00FE92F1+1807089]
+	Ordinal0 [0x00EF66FD+812797]
+	Ordinal0 [0x00F158F9+940281]
+	Ordinal0 [0x00F119C9+924105]
+	Ordinal0 [0x00F4806C+1146988]
+	Ordinal0 [0x00F47A6A+1145450]
+	Ordinal0 [0x00F418A6+1120422]
+	Ordinal0 [0x00F1A73D+960317]
+	Ordinal0 [0x00F1B71F+964383]
+	GetHandleVerifier [0x012FE7E2+2743074]
+	GetHandleVerifier [0x012F08D4+2685972]
+	GetHandleVerifier [0x010E2BAA+532202]
+	GetHandleVerifier [0x010E1990+527568]
+	Ordinal0 [0x00FF080C+1837068]
+	Ordinal0 [0x00FF4CD8+1854680]
+	Ordinal0 [0x00FF4DC5+1854917]
+	Ordinal0 [0x00FFED64+1895780]
+	BaseThreadInitThunk [0x75DDFEF9+25]
+	RtlGetAppContainerNamedObjectPath [0x76FE7BBE+286]
+	RtlGetAppContainerNamedObjectPath [0x76FE7B8E+238]
+
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1002)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
+	at orders.BaseClass.openBrowser(BaseClass.java:44)
+... Removed 24 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Cancel order's )                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
+          </div> <!-- suite-Suite-class-skipped -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\white\git\YoustoreV3-Git\YourstoreV3-PageObjectModel\testng.xml</span>
+            <span class="header-content">C:\Users\white\git\YoustoreV3-Git\YourstoreV3-PageObjectModel\testng4.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -169,16 +753,9 @@
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
-    &lt;groups&gt;
-      &lt;run&gt;
-        &lt;exclude name=&quot;pro&quot;/&gt;
-      &lt;/run&gt;
-    &lt;/groups&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;Authentication.Signup&quot;/&gt;
-      &lt;class name=&quot;Authentication.GenieSignupPage&quot;/&gt;
-      &lt;class name=&quot;Authentication.Prosignupbutton&quot;/&gt;
-      &lt;class name=&quot;Authentication.ProSignup&quot;/&gt;
+      &lt;class name=&quot;orders.LiveOrders&quot;/&gt;
+      &lt;class name=&quot;orders.CancelledOrders&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -192,7 +769,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (4 classes)</span>
+                <span class="test-name">Test (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -203,14 +780,46 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">genie</span>
+              <span class="test-group-name">cancelorders</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">genieSignup</span>
+                <span class="method-in-group-name">cancelOrder</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
-                <span class="method-in-group-name">signupPage</span>
+                <span class="method-in-group-name">cancelledOrder</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">liveorders</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">liveorders</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">courierPartner</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">liveOrders</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">markAsPaid</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">statusConfirmed</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">statusDelivered</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">statusDispatched</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -230,20 +839,48 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(9);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'signupPage')
-data.setCell(0, 2, 'Authentication.GenieSignupPage')
-data.setCell(0, 3, 23534);
+data.setCell(0, 1, 'liveOrders')
+data.setCell(0, 2, 'orders.LiveOrders')
+data.setCell(0, 3, 1);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'genieSignup')
-data.setCell(1, 2, 'Authentication.Signup')
-data.setCell(1, 3, 14311);
+data.setCell(1, 1, 'markAsPaid')
+data.setCell(1, 2, 'orders.LiveOrders')
+data.setCell(1, 3, 0);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'statusDispatched')
+data.setCell(2, 2, 'orders.LiveOrders')
+data.setCell(2, 3, 0);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'liveorders')
+data.setCell(3, 2, 'orders.CancelledOrders')
+data.setCell(3, 3, 0);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'statusDelivered')
+data.setCell(4, 2, 'orders.LiveOrders')
+data.setCell(4, 3, 0);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'cancelOrder')
+data.setCell(5, 2, 'orders.CancelledOrders')
+data.setCell(5, 3, 0);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'cancelledOrder')
+data.setCell(6, 2, 'orders.CancelledOrders')
+data.setCell(6, 3, 0);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'courierPartner')
+data.setCell(7, 2, 'orders.LiveOrders')
+data.setCell(7, 3, 0);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'statusConfirmed')
+data.setCell(8, 2, 'orders.LiveOrders')
+data.setCell(8, 3, 0);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 37 seconds</span>
+              <span class="suite-total-time">Total running time: 1 ms</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -258,37 +895,15 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">8 ignored methods</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">Authentication.GenieSignupPage</span>
+              <span class="ignored-class-name">orders.CancelledOrders</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">openBrowser</span>
-                <br/>
                 <span class="ignored-method-name">openUrl</span>
                 <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">Authentication.ProSignup</span>
-              <div class="ignored-methods-div">
                 <span class="ignored-method-name">openBrowser</span>
-                <br/>
-                <span class="ignored-method-name">proSignupPage</span>
-                <br/>
-                <span class="ignored-method-name">openUrl</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">Authentication.Prosignupbutton</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">openBrowser</span>
-                <br/>
-                <span class="ignored-method-name">proSignup</span>
-                <br/>
-                <span class="ignored-method-name">openUrl</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -300,25 +915,55 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">Authentication.Signup</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">orders.LiveOrders</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">openBrowser</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
                 <span class="method-name">openUrl</span>
-                <span class="method-start">1690 ms</span>
+                <span class="method-start">2547 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">genieSignup</span>
-                <span class="method-start">4664 ms</span>
+                <span class="method-name">liveOrders</span>
+                <span class="method-start">2587 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">markAsPaid</span>
+                <span class="method-start">2599 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">statusConfirmed</span>
+                <span class="method-start">2603 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">courierPartner</span>
+                <span class="method-start">2636 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">statusDispatched</span>
+                <span class="method-start">2651 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">statusDelivered</span>
+                <span class="method-start">2661 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">Authentication.GenieSignupPage</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">orders.CancelledOrders</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">signupPage</span>
-                <span class="method-start">18989 ms</span>
+                <span class="method-name">liveorders</span>
+                <span class="method-start">2675 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">cancelOrder</span>
+                <span class="method-start">2687 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">cancelledOrder</span>
+                <span class="method-start">2696 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

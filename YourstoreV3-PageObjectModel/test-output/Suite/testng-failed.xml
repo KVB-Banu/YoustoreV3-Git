@@ -1,32 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" parallel="tests" name="Test(failed)">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Authentication.ProSignup">
+      <class name="orders.LiveOrders">
         <methods>
-          <include name="openBrowser"/>
-          <include name="proSignupPage"/>
+          <include name="courierPartner"/>
+          <include name="statusDispatched"/>
+          <include name="liveOrders"/>
+          <include name="statusConfirmed"/>
+          <include name="markAsPaid"/>
+          <include name="statusDelivered"/>
           <include name="openUrl"/>
+          <include name="openBrowser"/>
         </methods>
-      </class> <!-- Authentication.ProSignup -->
-      <class name="addproduct.AddProduct">
+      </class> <!-- orders.LiveOrders -->
+      <class name="orders.CancelledOrders">
         <methods>
+          <include name="cancelOrder"/>
+          <include name="cancelledOrder"/>
+          <include name="liveorders"/>
           <include name="openUrl"/>
-          <include name="sizechart"/>
-          <include name="add"/>
           <include name="openBrowser"/>
-          <include name="submit"/>
-          <include name="advancedOptions"/>
         </methods>
-      </class> <!-- addproduct.AddProduct -->
-      <class name="Authentication.Prosignupbutton">
-        <methods>
-          <include name="openBrowser"/>
-          <include name="proSignup"/>
-          <include name="openUrl"/>
-        </methods>
-      </class> <!-- Authentication.Prosignupbutton -->
+      </class> <!-- orders.CancelledOrders -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
