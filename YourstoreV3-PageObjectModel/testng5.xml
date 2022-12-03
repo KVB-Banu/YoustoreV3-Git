@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Addon">
+  <test thread-count="5" name="Test">
+  <groups>
+  <run>
+  <exclude name="addon"></exclude>
+  <exclude name="FAQ"></exclude>
+<!--  <include name="Measure"></include> -->
+  <exclude name="ImageTags"></exclude>
+  <exclude name="product tags"></exclude>
+  <exclude name="SizeChart"></exclude>
+  <exclude name="FootNote"></exclude>
+  
+  </run>
+  </groups>
+  <classes>
+  <class name="productextras.MeasurementSets"/>
+ <!--  <class name="productextras.Addon"/>
+ <class name="productextras.FAQ"/>
+  <class name="productextras.FootNote"/>
+  <class name="productextras.ImageTags"/>
+  
+  <class name="productextras.productTags"/>
+  <class name="productextras.SizeChart"/> -->
+  
+  </classes>
+  
+  </test> <!-- Test -->
+</suite> <!-- Addon -->

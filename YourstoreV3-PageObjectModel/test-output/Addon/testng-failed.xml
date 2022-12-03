@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Addon]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <groups>
+      <run>
+        <exclude name="addon"/>
+        <exclude name="FAQ"/>
+        <exclude name="ImageTags"/>
+        <exclude name="product tags"/>
+        <exclude name="SizeChart"/>
+        <exclude name="FootNote"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="productextras.MeasurementSets">
+        <methods>
+          <include name="openUrl"/>
+          <include name="clickProd"/>
+          <include name="editView"/>
+          <include name="measure"/>
+          <include name="search"/>
+          <include name="remove"/>
+          <include name="openBrowser"/>
+        </methods>
+      </class> <!-- productextras.MeasurementSets -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Addon] -->

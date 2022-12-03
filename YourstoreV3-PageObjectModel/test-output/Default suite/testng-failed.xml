@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="catalog.Catlist">
+      <class name="productextras.MeasurementSets">
         <methods>
-          <include name="openBrowser"/>
-          <include name="catListInOut"/>
           <include name="openUrl"/>
+          <include name="remove"/>
+          <include name="openBrowser"/>
         </methods>
-      </class> <!-- catalog.Catlist -->
+      </class> <!-- productextras.MeasurementSets -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

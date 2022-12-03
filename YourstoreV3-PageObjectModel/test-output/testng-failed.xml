@@ -1,29 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="orders.LiveOrders">
+      <class name="productextras.MeasurementSets">
         <methods>
-          <include name="courierPartner"/>
-          <include name="statusDispatched"/>
-          <include name="liveOrders"/>
-          <include name="statusConfirmed"/>
-          <include name="markAsPaid"/>
-          <include name="statusDelivered"/>
           <include name="openUrl"/>
+          <include name="remove"/>
           <include name="openBrowser"/>
         </methods>
-      </class> <!-- orders.LiveOrders -->
-      <class name="orders.CancelledOrders">
-        <methods>
-          <include name="cancelOrder"/>
-          <include name="cancelledOrder"/>
-          <include name="liveorders"/>
-          <include name="openUrl"/>
-          <include name="openBrowser"/>
-        </methods>
-      </class> <!-- orders.CancelledOrders -->
+      </class> <!-- productextras.MeasurementSets -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
