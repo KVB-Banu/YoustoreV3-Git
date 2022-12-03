@@ -4,7 +4,7 @@
   <test thread-count="5" name="Test">
   <groups>
   <run>
-  <exclude name="addon"></exclude>
+<!--  <exclude name="addon"></exclude> -->
   <exclude name="FAQ"></exclude>
 <!--  <include name="Measure"></include> -->
   <exclude name="ImageTags"></exclude>
@@ -16,8 +16,8 @@
   </groups>
   <classes>
   <class name="productextras.MeasurementSets"/>
- <!--  <class name="productextras.Addon"/>
- <class name="productextras.FAQ"/>
+  <class name="productextras.Addon"/>
+ <!-- <class name="productextras.FAQ"/>
   <class name="productextras.FootNote"/>
   <class name="productextras.ImageTags"/>
   
