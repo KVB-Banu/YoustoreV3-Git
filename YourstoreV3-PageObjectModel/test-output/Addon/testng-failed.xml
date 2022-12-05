@@ -4,7 +4,6 @@
   <test thread-count="5" name="Test(failed)">
     <groups>
       <run>
-        <exclude name="addon"/>
         <exclude name="FAQ"/>
         <exclude name="ImageTags"/>
         <exclude name="product tags"/>
@@ -13,17 +12,16 @@
       </run>
     </groups>
     <classes>
-      <class name="productextras.MeasurementSets">
+      <class name="productextras.Addon">
         <methods>
           <include name="openUrl"/>
-          <include name="clickProd"/>
-          <include name="editView"/>
-          <include name="measure"/>
-          <include name="search"/>
+          <include name="addAddOn"/>
+          <include name="addOnCompare"/>
+          <include name="buttonSettings"/>
           <include name="remove"/>
           <include name="openBrowser"/>
         </methods>
-      </class> <!-- productextras.MeasurementSets -->
+      </class> <!-- productextras.Addon -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Addon] -->

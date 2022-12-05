@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="productextras.MeasurementSets">
+      <class name="productextras.productTags">
         <methods>
+          <include name="tagCompare"/>
           <include name="openUrl"/>
-          <include name="remove"/>
+          <include name="search"/>
           <include name="openBrowser"/>
         </methods>
-      </class> <!-- productextras.MeasurementSets -->
+      </class> <!-- productextras.productTags -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

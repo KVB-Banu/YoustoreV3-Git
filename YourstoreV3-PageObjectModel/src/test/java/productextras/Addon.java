@@ -1,16 +1,20 @@
 package productextras;
 
-import java.io.IOException; 
+import java.io.IOException;  
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
+
 
 
 
@@ -36,7 +40,7 @@ public class Addon extends BaseClass{
 	static String option2 = " option2 ";
 	
 	
-	@Test(priority=0, description="clicking on the product", groups="addon")
+	@Test(priority=5, description="clicking on the product", groups="addon")
 	public void clickPro() throws IOException, Exception 
 	    {
 		
@@ -44,15 +48,18 @@ public class Addon extends BaseClass{
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='accordion menu-scroll']/child::div[2]/descendant::span[contains(text(),'Products')]")));
 		driver.findElement(By.xpath("//div[@class='accordion menu-scroll']/child::div[2]/descendant::span[contains(text(),'Products')]")).click();
 		
-		driver.findElement(By.xpath("//a[normalize-space()='Product Extras']")).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/descendant::ul/descendant::a[contains(text(),'Product Extras')]")));	
+		driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/descendant::ul/descendant::a[contains(text(),'Product Extras')]")).click();
 		
-		driver.findElement(By.xpath("(//div[@class='card p-3 d-flex justify-content-start align-items-center flex-row'])[2]")).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-product-extras/descendant::label[contains(text(),'Addons')]")));
+		driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-product-extras/descendant::label[contains(text(),'Addons')]")).click();
 	    }
 	
-	@Test(priority=1, description="Addon", groups="addon")
+	
+	@Test(priority=6, description="Adding addon", groups="addon")
     public void addAddOn() throws IOException, Exception {
 			
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 50);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/app-root/app-store-layout/div[1]/div[3]/app-addons/div/div[2]/div/div[2]/button[3]")));
 		WebElement add = driver.findElement(By.xpath("/html/body/app-root/app-store-layout/div[1]/div[3]/app-addons/div/div[2]/div/div[2]/button[3]"));
 		 if(add.isDisplayed())
@@ -66,10 +73,11 @@ public class Addon extends BaseClass{
 			 }
 		 }
 		 
-		driver.findElement(By.xpath("/html/body/app-root/app-store-layout/div[1]/div[3]/app-addons/div/div[2]/div/div[2]/button[3]")).click();
-		 
 		
-		driver.findElement(By.xpath("(//i[@class='material-icons add-img'])[1]")).click();
+		driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-addons/child::div/child::div[2]/descendant::button[contains(text(),'Add Add-On')]")).click();
+		 
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//form[@class='ng-untouched ng-pristine ng-invalid']/descendant::i")));
+		driver.findElement(By.xpath("//form[@class='ng-untouched ng-pristine ng-invalid']/descendant::i")).click();
 		Runtime.getRuntime().exec("C:\\Users\\white\\OneDrive\\Desktop\\Jewel images\\image7.exe");
 		Thread.sleep(3000);
 		
@@ -87,6 +95,7 @@ public class Addon extends BaseClass{
 		Thread.sleep(2000);
 		
 		driver.findElement(By.xpath("//label[@class='checkbox checkbox-primary mt-3']//span[@class='checkmark']")).click();
+		
 		
 		for(int i = 0; i<1; i++) {
 		
@@ -108,15 +117,34 @@ public class Addon extends BaseClass{
 		driver.findElement(By.xpath("//span[normalize-space()='Select All']")).click();
 		
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		Thread.sleep(4000);
+		
+        WebElement error = driver.findElement(By.xpath("//div[@class='page_fixedfooter']/descendant::p[contains(text(),'Addon name already exists')]"));
+		
+		
+		if(error.isDisplayed()) {
+			
+			System.out.println(error.getText());
+			try {
+			       wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='page_fixedfooter']/descendant::span[contains(text(),'Cancel')]")));
+			       System.out.println("Cancel button is clickable");
+			     }
+			catch(TimeoutException e) {
+			       System.out.println("Cancel button isn't clickable");
+			    }
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='page_fixedfooter']/descendant::span[contains(text(),'Cancel')]")));
+			driver.findElement(By.xpath("//div[@class='page_fixedfooter']/descendant::span[contains(text(),'Cancel')]")).click();
+		}
+		
 		
 		}
 				
 	}
     
-	@Test(priority=2, description="edit the addon", groups="addon")
+	@Test(priority=7, description="edit the addon", groups="addon",enabled=false)
     public void edit()
     {
-    	WebDriverWait wait = new WebDriverWait(driver, 20);
+    	WebDriverWait wait = new WebDriverWait(driver, 50);
     	WebElement view = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-addons/descendant::div[2]/following-sibling::div[2]/descendant::div[3]/following-sibling::div/child::div[2]/descendant::button[2]")).get(0);
     	view.click();
     	
@@ -124,7 +152,7 @@ public class Addon extends BaseClass{
     }
     
     
-	@Test(priority=3, description="search the addon", groups="addon")
+	@Test(priority=8, description="search the addon", groups="addon")
     public void search() throws InterruptedException
 		{
 		 driver.findElement(By.name("search_bar")).sendKeys(addOnName);
@@ -134,17 +162,18 @@ public class Addon extends BaseClass{
 	  	 Thread.sleep(4000);
 		}
 		
-	@Test(priority=4, description="comparing the addon", groups="addon")
+	@Test(priority=9, description="comparing the addon", groups="addon")
     public void addOnCompare() throws Exception
 		{
-			WebDriverWait wait = new WebDriverWait(driver, 20);
+			WebDriverWait wait = new WebDriverWait(driver, 50);
 			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']//child::app-addons/descendant::div/child::div[3]/descendant::div[3]/following-sibling::div/descendant::p[1]")));
 			List<WebElement> addOnNames = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']//child::app-addons/descendant::div/child::div[3]/descendant::div[3]/following-sibling::div/descendant::p[1]"));
 			System.out.println("size of AddonNames: " +addOnNames.size());
 			
+			int count=0;
 			for(int i = 0; i<addOnNames.size(); i++)
 			{
-				
+				    count++;
 					wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']//child::app-addons/descendant::div/child::div[3]/descendant::div[3]/following-sibling::div/descendant::p[1]")));
 					List<WebElement> addOnNames1 = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']//child::app-addons/descendant::div/child::div[3]/descendant::div[3]/following-sibling::div/descendant::p[1]"));
 					System.out.println(addOnNames1.get(i).getText());
@@ -187,6 +216,7 @@ public class Addon extends BaseClass{
 					}
 				}
 				
+				System.out.println(count);
 				clickPro();
 				
 				Thread.sleep(4000);
@@ -196,11 +226,11 @@ public class Addon extends BaseClass{
 			
 		}
     
-	@Test(priority=5, description="removing the addon", groups="addon")
+	@Test(priority=10, description="removing the addon", groups="addon")
 	public void remove()
 	{
 		
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 50);
 		//clicking on remove button
 		driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-addons/descendant::div[2]/following-sibling::div[2]/descendant::div[3]/following-sibling::div/child::div[2]/descendant::button[1]")).get(4).click();
 		
@@ -221,12 +251,13 @@ public class Addon extends BaseClass{
 			System.out.println("Remove No button is not clickable");
 		}
 		
+		driver.findElement(By.xpath("//div[@class='modal-footer']/child::button[1]")).click();
 	}
 	
-	@Test(priority=6, description="buttonsettings", groups="addon")
+	@Test(priority=11, description="buttonsettings", groups="addon")
 	public void buttonSettings() throws Exception
 	{
-		WebDriverWait wait = new WebDriverWait(driver,20);
+		WebDriverWait wait = new WebDriverWait(driver,50);
 		Actions ac = new Actions(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']//child::app-addons/descendant::div/child::div[2]/descendant::div[2]/following-sibling::div/child::button[2]")));
 		driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']//child::app-addons/descendant::div/child::div[2]/descendant::div[2]/following-sibling::div/child::button[2]")).click();

@@ -22,7 +22,7 @@ public class productTags extends BaseClass {
 	static String searchKey = "skirt" ;
 	static String name = "test11";
 	
-	@Test(priority=0, description="clicking on the product", groups="product tags")
+	@Test(priority=12, description="clicking on the product", groups="product tags")
 	public void clickPro() throws InterruptedException
 	{
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
@@ -32,7 +32,7 @@ public class productTags extends BaseClass {
 		Thread.sleep(3000);
 	}
 	
-	  @Test(priority=1, description="Adding the product tags", groups="product tags")
+	  @Test(priority=13, description="Adding the product tags", groups="product tags")
 		public void addProdTags() throws InterruptedException
 		{
 			
@@ -67,7 +67,7 @@ public class productTags extends BaseClass {
 		}
 		
 		
-	    @Test(priority=2, description="searching the product tags", groups="product tags")
+	    @Test(priority=15, description="searching the product tags", groups="product tags")
 		public void search() throws InterruptedException
 		{
 		
@@ -80,7 +80,7 @@ public class productTags extends BaseClass {
 		}
 		
 		
-	    @Test(priority=3, description="comparing the product tags", groups="product tags")
+	    @Test(priority=14, description="comparing the product tags", groups="product tags")
 		public void tagCompare() throws InterruptedException {
 		
 		WebDriverWait wait = new WebDriverWait(driver, 20);
@@ -169,7 +169,7 @@ public class productTags extends BaseClass {
 //	    }
 		
 
-		driver.quit();
+	//	driver.quit();
 	}
 
 }
