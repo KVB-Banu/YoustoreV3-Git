@@ -8,7 +8,7 @@
   <exclude name="FAQ"></exclude>
 <!--  <include name="Measure"></include> -->
   <exclude name="ImageTags"></exclude>
-  <exclude name="product tags"></exclude>
+<!--  <exclude name="product tags"></exclude>-->
   <exclude name="SizeChart"></exclude>
   <exclude name="FootNote"></exclude>
   

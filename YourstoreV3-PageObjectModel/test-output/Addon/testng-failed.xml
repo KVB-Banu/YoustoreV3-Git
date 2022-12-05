@@ -6,22 +6,19 @@
       <run>
         <exclude name="FAQ"/>
         <exclude name="ImageTags"/>
-        <exclude name="product tags"/>
         <exclude name="SizeChart"/>
         <exclude name="FootNote"/>
       </run>
     </groups>
     <classes>
-      <class name="productextras.Addon">
+      <class name="productextras.productTags">
         <methods>
           <include name="openUrl"/>
-          <include name="addAddOn"/>
-          <include name="addOnCompare"/>
-          <include name="buttonSettings"/>
-          <include name="remove"/>
+          <include name="clickPro"/>
+          <include name="addProdTags"/>
           <include name="openBrowser"/>
         </methods>
-      </class> <!-- productextras.Addon -->
+      </class> <!-- productextras.productTags -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Addon] -->

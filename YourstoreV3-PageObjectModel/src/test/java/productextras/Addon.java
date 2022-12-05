@@ -5,17 +5,12 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-
-
-
 
 
 public class Addon extends BaseClass{
@@ -138,7 +133,8 @@ public class Addon extends BaseClass{
 		
 		
 		}
-				
+			
+		System.out.println("Added addon items");
 	}
     
 	@Test(priority=7, description="edit the addon", groups="addon",enabled=false)
@@ -152,7 +148,7 @@ public class Addon extends BaseClass{
     }
     
     
-	@Test(priority=8, description="search the addon", groups="addon")
+	@Test(priority=8, description="search the addon", groups="addon", enabled=false)
     public void search() throws InterruptedException
 		{
 		 driver.findElement(By.name("search_bar")).sendKeys(addOnName);
@@ -160,6 +156,7 @@ public class Addon extends BaseClass{
 		 List<WebElement> addOnNames = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']//child::app-addons/descendant::div/child::div[3]/descendant::div[3]/following-sibling::div/descendant::p[1]"));
 		 System.out.println("size of AddonNames: " +addOnNames.size());
 	  	 Thread.sleep(4000);
+	  	System.out.println("Searched addon items");
 		}
 		
 	@Test(priority=9, description="comparing the addon", groups="addon")
@@ -223,7 +220,7 @@ public class Addon extends BaseClass{
 				
 			}
 			
-			
+			System.out.println("comparing addon items");
 		}
     
 	@Test(priority=10, description="removing the addon", groups="addon")

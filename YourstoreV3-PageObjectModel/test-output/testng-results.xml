@@ -1,176 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="2" failed="2" skipped="0">
+<testng-results ignored="2" total="7" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-03T16:33:54 IST" name="Default suite" finished-at="2022-12-03T16:35:14 IST" duration-ms="80079">
+  <suite started-at="2022-12-05T12:49:22 IST" name="Default suite" finished-at="2022-12-05T12:52:12 IST" duration-ms="170608">
     <groups>
-      <group name="product tags">
-        <method signature="productTags.addProdTags()[pri:13, instance:productextras.productTags@a9cd3b1]" name="addProdTags" class="productextras.productTags"/>
-        <method signature="productTags.clickPro()[pri:12, instance:productextras.productTags@a9cd3b1]" name="clickPro" class="productextras.productTags"/>
-        <method signature="productTags.search()[pri:15, instance:productextras.productTags@a9cd3b1]" name="search" class="productextras.productTags"/>
-        <method signature="productTags.tagCompare()[pri:14, instance:productextras.productTags@a9cd3b1]" name="tagCompare" class="productextras.productTags"/>
-      </group> <!-- product tags -->
+      <group name="addon">
+        <method signature="Addon.addAddOn()[pri:6, instance:productextras.Addon@7e0b85f9]" name="addAddOn" class="productextras.Addon"/>
+        <method signature="Addon.addOnCompare()[pri:9, instance:productextras.Addon@7e0b85f9]" name="addOnCompare" class="productextras.Addon"/>
+        <method signature="Addon.buttonSettings()[pri:11, instance:productextras.Addon@7e0b85f9]" name="buttonSettings" class="productextras.Addon"/>
+        <method signature="Addon.clickPro()[pri:5, instance:productextras.Addon@7e0b85f9]" name="clickPro" class="productextras.Addon"/>
+        <method signature="Addon.remove()[pri:10, instance:productextras.Addon@7e0b85f9]" name="remove" class="productextras.Addon"/>
+      </group> <!-- addon -->
     </groups>
-    <test started-at="2022-12-03T16:33:54 IST" name="Default test" finished-at="2022-12-03T16:35:14 IST" duration-ms="80079">
-      <class name="productextras.productTags">
-        <test-method is-config="true" signature="openBrowser()[pri:0, instance:productextras.productTags@a9cd3b1]" started-at="2022-12-03T16:33:52 IST" name="openBrowser" finished-at="2022-12-03T16:33:54 IST" duration-ms="1900" status="PASS">
+    <test started-at="2022-12-05T12:49:22 IST" name="Default test" finished-at="2022-12-05T12:52:12 IST" duration-ms="170608">
+      <class name="productextras.Addon">
+        <test-method is-config="true" signature="openBrowser()[pri:0, instance:productextras.Addon@7e0b85f9]" started-at="2022-12-05T12:49:20 IST" name="openBrowser" finished-at="2022-12-05T12:49:22 IST" duration-ms="1571" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method is-config="true" signature="openUrl()[pri:0, instance:productextras.productTags@a9cd3b1]" started-at="2022-12-03T16:33:54 IST" name="openUrl" finished-at="2022-12-03T16:33:59 IST" duration-ms="4362" status="PASS">
+        <test-method is-config="true" signature="openUrl()[pri:0, instance:productextras.Addon@7e0b85f9]" started-at="2022-12-05T12:49:22 IST" name="openUrl" finished-at="2022-12-05T12:49:25 IST" duration-ms="2885" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openUrl -->
-        <test-method signature="clickPro()[pri:12, instance:productextras.productTags@a9cd3b1]" started-at="2022-12-03T16:33:59 IST" name="clickPro" description="clicking on the product" finished-at="2022-12-03T16:34:04 IST" duration-ms="5500" status="PASS">
+        <test-method signature="clickPro()[pri:5, instance:productextras.Addon@7e0b85f9]" started-at="2022-12-05T12:49:25 IST" name="clickPro" description="clicking on the product" finished-at="2022-12-05T12:49:29 IST" duration-ms="4554" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickPro -->
-        <test-method signature="addProdTags()[pri:13, instance:productextras.productTags@a9cd3b1]" started-at="2022-12-03T16:34:04 IST" name="addProdTags" description="Adding the product tags" finished-at="2022-12-03T16:34:05 IST" duration-ms="944" status="PASS">
+        <test-method signature="addAddOn()[pri:6, instance:productextras.Addon@7e0b85f9]" started-at="2022-12-05T12:49:29 IST" name="addAddOn" description="Adding addon" finished-at="2022-12-05T12:49:42 IST" duration-ms="12494" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addProdTags -->
-        <test-method signature="tagCompare()[pri:14, instance:productextras.productTags@a9cd3b1]" started-at="2022-12-03T16:34:05 IST" name="tagCompare" description="comparing the product tags" finished-at="2022-12-03T16:35:04 IST" duration-ms="59175" status="FAIL">
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
-            <message>
-              <![CDATA[element click intercepted: Element <label _ngcontent-vfw-c90="" class="text-title cursor pl-3">...</label> is not clickable at point (1080, 215). Other element would receive the click: <iframe id="siqiframe" title="SalesIQ Chatwindow" seamless="seamless" height="460" width="100%" scrolling="no"></iframe>
-  (Session info: chrome=107.0.5304.123)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-8O9USS3', ip: '172.16.1.18', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.123, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\white\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52517}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 9d007bf879c63da0ce255882975229e9]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <label _ngcontent-vfw-c90="" class="text-title cursor pl-3">...</label> is not clickable at point (1080, 215). Other element would receive the click: <iframe id="siqiframe" title="SalesIQ Chatwindow" seamless="seamless" height="460" width="100%" scrolling="no"></iframe>
-  (Session info: chrome=107.0.5304.123)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-8O9USS3', ip: '172.16.1.18', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.123, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\white\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52517}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 9d007bf879c63da0ce255882975229e9
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-at productextras.productTags.clickPro(productTags.java:31)
-at productextras.productTags.tagCompare(productTags.java:154)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+        </test-method> <!-- addAddOn -->
+        <test-method signature="addOnCompare()[pri:9, instance:productextras.Addon@7e0b85f9]" started-at="2022-12-05T12:49:42 IST" name="addOnCompare" description="comparing the addon" finished-at="2022-12-05T12:52:09 IST" duration-ms="146871" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tagCompare -->
-        <test-method signature="search()[pri:15, instance:productextras.productTags@a9cd3b1]" started-at="2022-12-03T16:35:04 IST" name="search" description="searching the product tags" finished-at="2022-12-03T16:35:14 IST" duration-ms="10029" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@placeholder='Search']"}
-  (Session info: chrome=107.0.5304.123)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-8O9USS3', ip: '172.16.1.18', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.123, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\white\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52517}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 9d007bf879c63da0ce255882975229e9
-*** Element info: {Using=xpath, value=//input[@placeholder='Search']}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@placeholder='Search']"}
-  (Session info: chrome=107.0.5304.123)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-8O9USS3', ip: '172.16.1.18', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.123, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\white\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52517}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 9d007bf879c63da0ce255882975229e9
-*** Element info: {Using=xpath, value=//input[@placeholder='Search']}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at productextras.productTags.search(productTags.java:74)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        </test-method> <!-- addOnCompare -->
+        <test-method signature="remove()[pri:10, instance:productextras.Addon@7e0b85f9]" started-at="2022-12-05T12:52:09 IST" name="remove" description="removing the addon" finished-at="2022-12-05T12:52:09 IST" duration-ms="191" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- search -->
-      </class> <!-- productextras.productTags -->
+        </test-method> <!-- remove -->
+        <test-method signature="buttonSettings()[pri:11, instance:productextras.Addon@7e0b85f9]" started-at="2022-12-05T12:52:09 IST" name="buttonSettings" description="buttonsettings" finished-at="2022-12-05T12:52:12 IST" duration-ms="3552" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- buttonSettings -->
+      </class> <!-- productextras.Addon -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
