@@ -64,7 +64,12 @@ public class Catlist extends BaseClass{
     		WebElement ProdN = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/child::div/child::div[2]//div/descendant::div//div/following-sibling::div/descendant::p[2]")).get(i);
     		System.out.println("prodN : "+ProdN.getText());
     		
-    		
+    		 List<WebElement> chatbox = driver.findElements(By.xpath("//div[@class='win_close sqico-larrow']")); 
+    		 
+    		 if(chatbox.size()>0)
+    		 {
+    			 chatbox.get(0).click();
+    		 }
     		//click on view
     		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/child::div/child::div[2]//div/descendant::div//div/descendant::div[2]/descendant::button[contains(text(),'View')]")));
     	    driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/child::div/child::div[2]//div/descendant::div//div/descendant::div[2]/descendant::button[contains(text(),'View')]")).get(i).click();
@@ -154,7 +159,7 @@ public class Catlist extends BaseClass{
 //    }
     Thread.sleep(3000);
     System.out.println("Completed");
-    driver.quit();
+//    driver.quit();
 //	
 }
 	

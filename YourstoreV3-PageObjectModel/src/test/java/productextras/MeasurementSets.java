@@ -50,6 +50,13 @@ public class MeasurementSets extends BaseClass{
 				
 		driver.findElement(By.xpath("(//button[@type='button'])[1]")).click();
 		
+		 List<WebElement> chatbox = driver.findElements(By.xpath("//div[@class='win_close sqico-larrow']")); 
+		 
+		 if(chatbox.size()>0)
+		 {
+			 chatbox.get(0).click();
+		 }
+		
 		try {
 		       wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//i[@class='material-icons add-img']")));
 		       System.out.println("Image Element is clickable");

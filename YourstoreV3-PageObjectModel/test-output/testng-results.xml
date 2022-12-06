@@ -1,48 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="7" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-05T12:49:22 IST" name="Default suite" finished-at="2022-12-05T12:52:12 IST" duration-ms="170608">
+  <suite started-at="2022-12-06T10:52:05 IST" name="Default suite" finished-at="2022-12-06T10:56:14 IST" duration-ms="248316">
     <groups>
-      <group name="addon">
-        <method signature="Addon.addAddOn()[pri:6, instance:productextras.Addon@7e0b85f9]" name="addAddOn" class="productextras.Addon"/>
-        <method signature="Addon.addOnCompare()[pri:9, instance:productextras.Addon@7e0b85f9]" name="addOnCompare" class="productextras.Addon"/>
-        <method signature="Addon.buttonSettings()[pri:11, instance:productextras.Addon@7e0b85f9]" name="buttonSettings" class="productextras.Addon"/>
-        <method signature="Addon.clickPro()[pri:5, instance:productextras.Addon@7e0b85f9]" name="clickPro" class="productextras.Addon"/>
-        <method signature="Addon.remove()[pri:10, instance:productextras.Addon@7e0b85f9]" name="remove" class="productextras.Addon"/>
-      </group> <!-- addon -->
+      <group name="Catlist">
+        <method signature="Catlist.catListInOut()[pri:0, instance:catalog.Catlist@67a20f67]" name="catListInOut" class="catalog.Catlist"/>
+      </group> <!-- Catlist -->
     </groups>
-    <test started-at="2022-12-05T12:49:22 IST" name="Default test" finished-at="2022-12-05T12:52:12 IST" duration-ms="170608">
-      <class name="productextras.Addon">
-        <test-method is-config="true" signature="openBrowser()[pri:0, instance:productextras.Addon@7e0b85f9]" started-at="2022-12-05T12:49:20 IST" name="openBrowser" finished-at="2022-12-05T12:49:22 IST" duration-ms="1571" status="PASS">
+    <test started-at="2022-12-06T10:52:05 IST" name="Default test" finished-at="2022-12-06T10:56:14 IST" duration-ms="248316">
+      <class name="catalog.Catlist">
+        <test-method is-config="true" signature="openBrowser()[pri:0, instance:catalog.Catlist@67a20f67]" started-at="2022-12-06T10:52:03 IST" name="openBrowser" finished-at="2022-12-06T10:52:05 IST" duration-ms="2058" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method is-config="true" signature="openUrl()[pri:0, instance:productextras.Addon@7e0b85f9]" started-at="2022-12-05T12:49:22 IST" name="openUrl" finished-at="2022-12-05T12:49:25 IST" duration-ms="2885" status="PASS">
+        <test-method is-config="true" signature="openUrl()[pri:0, instance:catalog.Catlist@67a20f67]" started-at="2022-12-06T10:52:05 IST" name="openUrl" finished-at="2022-12-06T10:52:08 IST" duration-ms="3047" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openUrl -->
-        <test-method signature="clickPro()[pri:5, instance:productextras.Addon@7e0b85f9]" started-at="2022-12-05T12:49:25 IST" name="clickPro" description="clicking on the product" finished-at="2022-12-05T12:49:29 IST" duration-ms="4554" status="PASS">
+        <test-method signature="catListInOut()[pri:0, instance:catalog.Catlist@67a20f67]" started-at="2022-12-06T10:52:08 IST" name="catListInOut" description="Catalog List" finished-at="2022-12-06T10:56:14 IST" duration-ms="245206" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickPro -->
-        <test-method signature="addAddOn()[pri:6, instance:productextras.Addon@7e0b85f9]" started-at="2022-12-05T12:49:29 IST" name="addAddOn" description="Adding addon" finished-at="2022-12-05T12:49:42 IST" duration-ms="12494" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addAddOn -->
-        <test-method signature="addOnCompare()[pri:9, instance:productextras.Addon@7e0b85f9]" started-at="2022-12-05T12:49:42 IST" name="addOnCompare" description="comparing the addon" finished-at="2022-12-05T12:52:09 IST" duration-ms="146871" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addOnCompare -->
-        <test-method signature="remove()[pri:10, instance:productextras.Addon@7e0b85f9]" started-at="2022-12-05T12:52:09 IST" name="remove" description="removing the addon" finished-at="2022-12-05T12:52:09 IST" duration-ms="191" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- remove -->
-        <test-method signature="buttonSettings()[pri:11, instance:productextras.Addon@7e0b85f9]" started-at="2022-12-05T12:52:09 IST" name="buttonSettings" description="buttonsettings" finished-at="2022-12-05T12:52:12 IST" duration-ms="3552" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- buttonSettings -->
-      </class> <!-- productextras.Addon -->
+        </test-method> <!-- catListInOut -->
+      </class> <!-- catalog.Catlist -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

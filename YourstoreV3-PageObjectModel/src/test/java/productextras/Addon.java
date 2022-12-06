@@ -48,6 +48,14 @@ public class Addon extends BaseClass{
 		
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-product-extras/descendant::label[contains(text(),'Addons')]")));
 		driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-product-extras/descendant::label[contains(text(),'Addons')]")).click();
+	   
+		 List<WebElement> chatbox = driver.findElements(By.xpath("//div[@class='win_close sqico-larrow']")); 
+		 
+		 if(chatbox.size()>0)
+		 {
+			 chatbox.get(0).click();
+		 }
+		
 	    }
 	
 	
@@ -128,7 +136,17 @@ public class Addon extends BaseClass{
 			       System.out.println("Cancel button isn't clickable");
 			    }
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='page_fixedfooter']/descendant::span[contains(text(),'Cancel')]")));
+		
 			driver.findElement(By.xpath("//div[@class='page_fixedfooter']/descendant::span[contains(text(),'Cancel')]")).click();
+		
+             List<WebElement> chatbox = driver.findElements(By.xpath("//div[@class='win_close sqico-larrow']")); 
+    		 
+    		 if(chatbox.size()>0)
+    		 {
+    			 chatbox.get(0).click();
+    		 }
+		
+		
 		}
 		
 		
@@ -200,6 +218,13 @@ public class Addon extends BaseClass{
 				List<WebElement> addOnElements = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/descendant::app-add-product/descendant::form/child::div[2]/following-sibling::div[2]/descendant::div[3]/following-sibling::div/child::div/child::div[3]/child::div[2]/descendant::div[3]/following-sibling::div/descendant::span/child::span"));
 			//	System.out.println("size of addon Elements : " + addOnElements.size());
 				
+				 List<WebElement> chatbox = driver.findElements(By.xpath("//div[@class='win_close sqico-larrow']")); 
+	    		 
+	    		 if(chatbox.size()>0)
+	    		 {
+	    			 chatbox.get(0).click();
+	    		 }
+	    		 
 				for(WebElement x : addOnElements)
 				{
 					String text = x.getText();

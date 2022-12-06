@@ -50,7 +50,7 @@
             <suiteXmlFile>testng1.xml</suiteXmlFile> 
        <!-- <suiteXmlFile>testng2.xml</suiteXmlFile> -->
           <suiteXmlFile>testng3.xml</suiteXmlFile> 
-            <suiteXmlFile>testng4.xml</suiteXmlFile>
+      <!-- <suiteXmlFile>testng4.xml</suiteXmlFile> -->
           <suiteXmlFile>testng5.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>

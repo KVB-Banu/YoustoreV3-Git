@@ -108,6 +108,13 @@ public class productTags extends BaseClass {
 			String text1 = tagNames1.getText();
 		//	System.out.println("Tag Name in Product Tags : " + text1);
 			
+             List<WebElement> chatbox = driver.findElements(By.xpath("//div[@class='win_close sqico-larrow']")); 
+    		 
+    		 if(chatbox.size()>0)
+    		 {
+    			 chatbox.get(0).click();
+    		 }
+    		 
 			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class=\"main-content-wrap d-flex flex-column sidenav-open top_space\"]/child::app-product-tags/child::div/child::div[3]/child::div/child::div/child::div/following-sibling::div/descendant::p[2]")));
 			WebElement optionCount1 = driver.findElements(By.xpath("//div[@class=\"main-content-wrap d-flex flex-column sidenav-open top_space\"]/child::app-product-tags/child::div/child::div[3]/child::div/child::div/child::div/following-sibling::div/descendant::p[2]")).get(i);
 			System.out.println(text1 + " => " + optionCount1.getText());
