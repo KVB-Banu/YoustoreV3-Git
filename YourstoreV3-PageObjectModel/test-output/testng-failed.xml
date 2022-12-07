@@ -11,14 +11,28 @@
       </run>
     </groups>
     <classes>
-      <class name="productextras.productTags">
+      <class name="productextras.MeasurementSets">
         <methods>
           <include name="openUrl"/>
-          <include name="clickPro"/>
-          <include name="addProdTags"/>
+          <include name="clickProd"/>
+          <include name="editView"/>
+          <include name="measure"/>
+          <include name="search"/>
+          <include name="remove"/>
           <include name="openBrowser"/>
         </methods>
-      </class> <!-- productextras.productTags -->
+      </class> <!-- productextras.MeasurementSets -->
+      <class name="productextras.Addon">
+        <methods>
+          <include name="openUrl"/>
+          <include name="addAddOn"/>
+          <include name="clickPro"/>
+          <include name="addOnCompare"/>
+          <include name="buttonSettings"/>
+          <include name="remove"/>
+          <include name="openBrowser"/>
+        </methods>
+      </class> <!-- productextras.Addon -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Addon] -->

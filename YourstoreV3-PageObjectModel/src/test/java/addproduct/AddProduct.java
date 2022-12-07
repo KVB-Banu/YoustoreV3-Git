@@ -77,7 +77,12 @@ public class AddProduct extends BaseClass {
 		driver.findElement(By.xpath("//div[@class='accordion menu-scroll']/child::div[2]/descendant::span[contains(text(),'Products')]")).click();
 		Actions ac= new Actions(driver);
 		Thread.sleep(1000);
-		
+		List<WebElement> chatbox = driver.findElements(By.xpath("//div[@class='win_close sqico-larrow']")); 
+		 
+		 if(chatbox.size()>0)
+		 {
+			 chatbox.get(0).click();
+		 }
 		try {
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/descendant::div[2]/descendant::div[5]/child::button[contains(text(),'Add Product')]")));
 			driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/descendant::div[2]/descendant::div[5]/child::button[contains(text(),'Add Product')]")).click();
@@ -125,12 +130,7 @@ public class AddProduct extends BaseClass {
 		Thread.sleep(2000);
 //		driver.findElements(By.xpath("//div[@role='document']/descendant::input")).get(i).sendKeys(altImageLabel);
 		
-		List<WebElement> chatbox = driver.findElements(By.xpath("//div[@class='win_close sqico-larrow']")); 
-		 
-		 if(chatbox.size()>0)
-		 {
-			 chatbox.get(0).click();
-		 }
+		
 			
 		}
 		
