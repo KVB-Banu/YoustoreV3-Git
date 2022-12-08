@@ -1,38 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Addon]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
-    <groups>
-      <run>
-        <exclude name="FAQ"/>
-        <exclude name="ImageTags"/>
-        <exclude name="SizeChart"/>
-        <exclude name="FootNote"/>
-      </run>
-    </groups>
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="productextras.MeasurementSets">
+      <class name="addproduct.AddProduct">
         <methods>
           <include name="openUrl"/>
-          <include name="clickProd"/>
-          <include name="editView"/>
-          <include name="measure"/>
           <include name="search"/>
-          <include name="remove"/>
           <include name="openBrowser"/>
         </methods>
-      </class> <!-- productextras.MeasurementSets -->
-      <class name="productextras.Addon">
-        <methods>
-          <include name="openUrl"/>
-          <include name="addAddOn"/>
-          <include name="clickPro"/>
-          <include name="addOnCompare"/>
-          <include name="buttonSettings"/>
-          <include name="remove"/>
-          <include name="openBrowser"/>
-        </methods>
-      </class> <!-- productextras.Addon -->
+      </class> <!-- addproduct.AddProduct -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Addon] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

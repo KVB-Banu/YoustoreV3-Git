@@ -19,11 +19,12 @@ import org.testng.annotations.Test;
 
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 
 
 public class AddProduct extends BaseClass {
 	
-	static String email ="demo302@yourstore.io";
+	
 	static String name = "Xyz";
 	static String unit = "Pcs";
 	static String vendor = "Yourstore";
@@ -35,40 +36,9 @@ public class AddProduct extends BaseClass {
 	static String imageLabel="Bangle1";
 	static String altImageLabel="Bangle1";
 	
-	@Test(priority=0,groups="addproduct")
-	public void login() throws InterruptedException
-	{
-		
-		WebDriverWait wait = new WebDriverWait(driver,30);
-	//	driver.findElement(By.xpath("//div[@class='menu-wrapper d-none d-lg-flex justify-content-end align-items-center']/descendant::li/child::a[contains(text(),'Login')]")).click();
-//		Thread.sleep(4000);
-//		String parent=driver.getWindowHandle();
-//
-//		Set<String>s=driver.getWindowHandles();
-//		
-//		Iterator<String> I1= s.iterator();
-//
-//		while(I1.hasNext())
-//		{
-//
-//		String child_window=I1.next();
-//
-//
-//		if(!parent.equals(child_window))
-//		{
-//		driver.switchTo().window(child_window);
-//
-//		System.out.println(driver.switchTo().window(child_window).getTitle());
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='auth-content']/child::app-signin/descendant::form/descendant::input[@name='email']")));
-		driver.findElement(By.xpath("//div[@class='auth-content']/child::app-signin/descendant::form/descendant::input[@name='email']")).sendKeys(email);
-		driver.findElement(By.name("password")).sendKeys(password);
-		driver.findElement(By.xpath("/html/body/app-root/app-auth-layout/div/div/app-signin/div/div/div/div/form/div[3]/div[3]/btn-loading/button")).click();
-	}
-//		}
-//	}
-//	
 	
-	@Test(priority=1,groups="addproduct")
+	
+	@Test(priority=0, description = "Adding the product",  groups="addproduct")
 	public void add() throws Exception  {
 		
 		WebDriverWait wait = new WebDriverWait(driver,50);
@@ -77,12 +47,7 @@ public class AddProduct extends BaseClass {
 		driver.findElement(By.xpath("//div[@class='accordion menu-scroll']/child::div[2]/descendant::span[contains(text(),'Products')]")).click();
 		Actions ac= new Actions(driver);
 		Thread.sleep(1000);
-		List<WebElement> chatbox = driver.findElements(By.xpath("//div[@class='win_close sqico-larrow']")); 
-		 
-		 if(chatbox.size()>0)
-		 {
-			 chatbox.get(0).click();
-		 }
+		
 		try {
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/descendant::div[2]/descendant::div[5]/child::button[contains(text(),'Add Product')]")));
 			driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/descendant::div[2]/descendant::div[5]/child::button[contains(text(),'Add Product')]")).click();
@@ -205,18 +170,12 @@ public class AddProduct extends BaseClass {
 		 obj.executeScript("window.scrollBy(0,1000)");
 	}
 	
-	@Test(priority=2,groups="addproduct", enabled=false)
+	@Test(priority=1,groups="addproduct", enabled=false)
 	public void variant() throws Exception
 	{
 		WebDriverWait wait = new WebDriverWait(driver,50);
 		Actions ac= new Actions(driver);
-		List<WebElement> chatbox = driver.findElements(By.xpath("//div[@class='win_close sqico-larrow']")); 
-		 
-		 if(chatbox.size()>0)
-		 {
-			 chatbox.get(0).click();
-		 }
-		
+			
 		 //clicking on apply variant
 		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//b[normalize-space()='Apply Variants']")));
 		 WebElement variant = driver.findElement(By.xpath("//b[normalize-space()='Apply Variants']"));
@@ -274,7 +233,7 @@ public class AddProduct extends BaseClass {
 		 driver.findElement(By.xpath("(//input[contains(@type,'tel')])[6]")).sendKeys("50000"); 
 		 }
 	
-	@Test(priority=3,groups="addproduct")
+	@Test(priority=2,groups="addproduct")
 	public void advancedOptions() throws InterruptedException {
 		
 		WebDriverWait wait = new WebDriverWait(driver,50);
@@ -283,12 +242,7 @@ public class AddProduct extends BaseClass {
 		 driver.findElement(By.name("brand")).sendKeys("GRT"); // Brand name
 		 driver.findElement(By.xpath("//input[@placeholder='Enter options']")).sendKeys("Thick bangle", ",","two bangle",",");
 		 
-         List<WebElement> chatbox = driver.findElements(By.xpath("//div[@class='win_close sqico-larrow']")); 
-		 
-		 if(chatbox.size()>0)
-		 {
-			 chatbox.get(0).click();
-		 }
+        
 		 // click on featured product
 		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@id=\"collapseOne\"]/div/div[2]/div[1]/label/span[1]")));
 		 driver.findElement(By.xpath("//*[@id=\"collapseOne\"]/div/div[2]/div[1]/label/span[1]")).click();
@@ -300,7 +254,7 @@ public class AddProduct extends BaseClass {
 		 
 	}
 	
-	@Test(priority=4,groups="addproduct", enabled=false)
+	@Test(priority=3,groups="addproduct", enabled=false)
 	public void productExtras() throws InterruptedException {
 		 
 		 // Click on Addon
@@ -338,7 +292,7 @@ public class AddProduct extends BaseClass {
 		 }
 	}
 	
-	@Test(priority=5,groups="addproduct")
+	@Test(priority=4,groups="addproduct")
 	public void sizechart() throws InterruptedException {
 		 // click on size chart
 		WebDriverWait wait = new WebDriverWait(driver,50);
@@ -357,12 +311,7 @@ public class AddProduct extends BaseClass {
 		 List<WebElement> tagsTitle = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-product-sections/child::div/following-sibling::app-add-product/child::div/child::form/child::div[2]/following-sibling::div[2]/descendant::div[2]/child::div[2]/descendant::div[2]/following-sibling::div[4]/descendant::div[2]/following-sibling::div/child::div/descendant::b"));
 		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-product-sections/child::div/following-sibling::app-add-product/child::div/child::form/child::div[2]/following-sibling::div[2]/descendant::div[2]/child::div[2]/descendant::div[2]/following-sibling::div[4]/descendant::div[2]/following-sibling::div/child::div/descendant::div[2]/following-sibling::div/child::div")));
 		 List<WebElement> tagsOption = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-product-sections/child::div/following-sibling::app-add-product/child::div/child::form/child::div[2]/following-sibling::div[2]/descendant::div[2]/child::div[2]/descendant::div[2]/following-sibling::div[4]/descendant::div[2]/following-sibling::div/child::div/descendant::div[2]/following-sibling::div/child::div"));
-         List<WebElement> chatbox = driver.findElements(By.xpath("//div[@class='win_close sqico-larrow']")); 
-		 
-		 if(chatbox.size()>0)
-		 {
-			 chatbox.get(0).click();
-		 }
+        
 		 for(int i=0; i<tagsTitle.size();i++) {
 			 String tgt = tagsTitle.get(i).getText();
 			 if(tagsTitle.equals(tagtitleName))
@@ -386,7 +335,7 @@ public class AddProduct extends BaseClass {
 //			 }
 		 }
 	}
-		 @Test(priority=6,groups="addproduct", enabled=false)
+		 @Test(priority=5,groups="addproduct", enabled=false)
 			public void footnote() throws InterruptedException {
 			 WebDriverWait wait = new WebDriverWait(driver,50);
 				Actions ac= new Actions(driver);
@@ -396,12 +345,14 @@ public class AddProduct extends BaseClass {
 		 driver.findElement(By.xpath("(//span[normalize-space()='Apply Foot Note'])[1]")).click();
 		 driver.findElement(By.xpath("//span[contains(text(),'12 inch')]")).click();
 		 
-         List<WebElement> chatbox = driver.findElements(By.xpath("//div[@class='win_close sqico-larrow']")); 
-		 
-		 if(chatbox.size()>0)
-		 {
-			 chatbox.get(0).click();
-		 }
+		 wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe")));
+			
+		 System.out.println("frame found and switched ");
+			
+		 WebElement close = driver.findElement(By.xpath("//div[contains(@class,'win_close sqico-larrow')]"));
+			
+		 ac.moveToElement(close).click().build().perform();
+        
 		 //Apply FAQ
 		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//span[normalize-space()='Apply FAQ']")));
 		 driver.findElement(By.xpath("//span[normalize-space()='Apply FAQ']")).click();
@@ -411,18 +362,52 @@ public class AddProduct extends BaseClass {
 		 }
 		 
 		 
-		 @Test(priority=7,groups="addproduct")
+		 @Test(priority=6,groups="addproduct")
 			public void submit() throws InterruptedException {
 			 
-			 List<WebElement> chatbox = driver.findElements(By.xpath("//div[@class='win_close sqico-larrow']")); 
+			 WebDriverWait wait = new WebDriverWait(driver,50);
+			 Actions ac= new Actions(driver);
+			 wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe")));
+				
+			 System.out.println("frame found and switched ");
+				
+			 WebElement close = driver.findElement(By.xpath("//div[contains(@class,'win_close sqico-larrow')]"));
+				
+			 ac.moveToElement(close).click().build().perform();
+			 System.out.println("closing the frame ");
+			 driver.switchTo().defaultContent();
 			 
-			 if(chatbox.size()>0)
-			 {
-				 chatbox.get(0).click();
-			 }
-		 driver.findElement(By.xpath("//span[@class='ladda-label']")).click();  
+			 JavascriptExecutor obj = (JavascriptExecutor) driver;
+			 obj.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+			 
+			
+		     driver.findElement(By.xpath("//span[@class='ladda-label']")).click();  
 		 
 	}
+		 
+		 @Test(priority=7, groups="addproduct")
+		 public void search() throws InterruptedException
+		 {
+			 WebDriverWait wait = new WebDriverWait(driver, 50);
+			 Actions ac = new Actions(driver);
+			 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-product-sections/descendant::form/descendant::input")));
+			 WebElement search = driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-product-sections/descendant::form/descendant::input"));
+			
+			 ac.click(search).sendKeys(name).sendKeys(Keys.ENTER).build().perform();
+			 
+				System.out.println("Search name: " + name);
+				
+				Thread.sleep(4000);
+				
+				
+		    //  List<WebElement> product = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-product-sections/child::app-products/descendant::div[2]/following-sibling::div[2]/descendant::div[3]/following-sibling::div/descendant::p[1]"));
+				String product = driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-product-sections/child::app-products/descendant::p[1]")).getText();
+				System.out.println(name + " : Total products =" + product);
+				
+			//	System.out.println("number of Products: " + product.size());
+			//	List<WebElement> prodN = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/child::div/child::div[2]//div/descendant::div//div/following-sibling::div/descendant::p[2]"));
+		 }
+		 
 		 
 	}
 	

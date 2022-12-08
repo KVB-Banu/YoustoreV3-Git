@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -136,6 +137,7 @@ public class ACatalog extends BaseClass{
 	public void catalogCompare() throws Exception {
 		
 		  WebDriverWait wait = new WebDriverWait(driver, 20);
+		  Actions ac = new Actions(driver);
 		  wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/child::div/child::div[2]//div/descendant::div//div/following-sibling::div/descendant::p[1]")));
 		  List<WebElement> catalogNames = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/child::div/child::div[2]//div/descendant::div//div/following-sibling::div/descendant::p[1]"));
 		 
@@ -157,14 +159,14 @@ public class ACatalog extends BaseClass{
 			  
 			  JavascriptExecutor obj = (JavascriptExecutor) driver;
 			  obj.executeScript("window.scrollBy(0,610)");
-			  
+			  			  
 			  wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/descendant::app-add-product/descendant::form/child::div[2]/child::div[8]/descendant::div[2]/following-sibling::div/descendant::label/child::span")));
 			  List<WebElement> catalogElementsNameInProduct = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/descendant::app-add-product/descendant::form/child::div[2]/child::div[8]/descendant::div[2]/following-sibling::div/descendant::label/child::span"));
-			  
+			 
 			  for(WebElement x : catalogElementsNameInProduct)
 				{
 					String text = x.getText();
-				
+								
 					//	System.out.println("Add on Names in Add product : " + text);
 					Thread.sleep(4000);
 					
@@ -175,9 +177,34 @@ public class ACatalog extends BaseClass{
 					break;
 					}
 					
+					
 				}
 			  
+			            
 			  clickPro();
+			  System.out.println("clicking on the clickpro");
+			  
+			  try {	
+				  
+				     WebElement chatframe = driver.findElement(By.xpath("//iframe"));
+				     
+				     if(chatframe.isEnabled()) {
+				    	 
+				     wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe")));
+					
+					 System.out.println("frame found and switched ");
+				     WebElement close = driver.findElement(By.xpath("//div[contains(@class,'win_close sqico-larrow')]"));
+					
+					 ac.moveToElement(close).click().build().perform();
+					 System.out.println("closing the frame in the after clickpro ");
+				     }
+					 
+	                }catch(Exception e)
+	                {
+	                	System.out.println("chat box is not popped up");
+	                }
+			  driver.switchTo().defaultContent(); 
+			  
 			  Thread.sleep(4000);
 			  
 			  

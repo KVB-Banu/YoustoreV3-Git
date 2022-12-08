@@ -3,27 +3,13 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="orders.LiveOrders">
+      <class name="catalog.Catlist">
         <methods>
-          <include name="courierPartner"/>
-          <include name="statusDispatched"/>
-          <include name="liveOrders"/>
-          <include name="statusConfirmed"/>
-          <include name="markAsPaid"/>
-          <include name="statusDelivered"/>
-          <include name="openUrl"/>
           <include name="openBrowser"/>
-        </methods>
-      </class> <!-- orders.LiveOrders -->
-      <class name="orders.CancelledOrders">
-        <methods>
-          <include name="cancelOrder"/>
-          <include name="cancelledOrder"/>
-          <include name="liveorders"/>
+          <include name="catListInOut"/>
           <include name="openUrl"/>
-          <include name="openBrowser"/>
         </methods>
-      </class> <!-- orders.CancelledOrders -->
+      </class> <!-- catalog.Catlist -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

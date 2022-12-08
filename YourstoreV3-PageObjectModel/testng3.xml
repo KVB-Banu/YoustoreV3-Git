@@ -7,6 +7,7 @@
       <class name="catalog.ACatalog"/>
       <class name="catalog.SearchCatalog"/>
       <class name="catalog.Catlist"/>
+      
   <!--    <class name="catalog.Edit"/> -->
     </classes>
     

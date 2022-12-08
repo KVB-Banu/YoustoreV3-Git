@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="productextras.Addon">
+      <class name="addproduct.AddProduct">
         <methods>
           <include name="openUrl"/>
-          <include name="addAddOn"/>
+          <include name="search"/>
           <include name="openBrowser"/>
         </methods>
-      </class> <!-- productextras.Addon -->
+      </class> <!-- addproduct.AddProduct -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

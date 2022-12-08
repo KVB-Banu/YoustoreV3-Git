@@ -223,6 +223,17 @@ public class MeasurementSets extends BaseClass{
 	       System.out.println("No button isn't clickable");
 	    }
 	
+		
+		 wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe")));
+			
+		 System.out.println("frame found and switched ");
+			
+		 WebElement close = driver.findElement(By.xpath("//div[contains(@class,'win_close sqico-larrow')]"));
+			
+		 ac.moveToElement(close).click().build().perform();
+		 System.out.println("closing the frame ");
+		 driver.switchTo().defaultContent();
+		 
 		driver.findElement(By.xpath("//div[@class='modal-footer']/descendant::span[contains(text(),'No')]")).click();
 	}
 
