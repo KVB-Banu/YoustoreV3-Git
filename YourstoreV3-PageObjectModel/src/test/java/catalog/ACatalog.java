@@ -39,6 +39,7 @@ public class ACatalog extends BaseClass{
    public void addCat() throws IOException, InterruptedException {
 		
 		WebDriverWait wait = new WebDriverWait(driver, 20);
+		Actions ac = new Actions(driver);
 		
 		driver.findElement(By.xpath("//button[@routerlink='/product-sections/catalogs/add']")).click();
 		driver.findElement(By.xpath("//i[@class='material-icons add-img']")).click();
@@ -106,10 +107,52 @@ public class ACatalog extends BaseClass{
 		String link = driver.findElement(By.xpath("//p[@class='light-font font-10 mb-1 ng-star-inserted']")).getText();
 		System.out.println(link);
 		
+		 try {	
+			  
+		     WebElement chatframe = driver.findElement(By.xpath("//iframe"));
+		     
+		     if(chatframe.isEnabled()) {
+		    	 
+		     wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe")));
+			
+			 System.out.println("frame found and switched ");
+		     WebElement close = driver.findElement(By.xpath("//div[contains(@class,'win_close sqico-larrow')]"));
+			
+			 ac.moveToElement(close).click().build().perform();
+			 System.out.println("closing the frame in the after clickpro ");
+		     }
+			 
+         }catch(Exception e)
+         {
+         	System.out.println("chat box is not popped up");
+         }
+	  driver.switchTo().defaultContent(); 
+		
 		
 		driver.findElement(By.xpath("//span[@class='ladda-label']")).click();
 		
 		Thread.sleep(3000);
+		
+		  try {	
+			  
+			     WebElement chatframe = driver.findElement(By.xpath("//iframe"));
+			     
+			     if(chatframe.isEnabled()) {
+			    	 
+			     wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe")));
+				
+				 System.out.println("frame found and switched ");
+			     WebElement close = driver.findElement(By.xpath("//div[contains(@class,'win_close sqico-larrow')]"));
+				
+				 ac.moveToElement(close).click().build().perform();
+				 System.out.println("closing the frame in the after clickpro ");
+			     }
+				 
+             }catch(Exception e)
+             {
+             	System.out.println("chat box is not popped up");
+             }
+		  driver.switchTo().defaultContent(); 
 		
 		WebElement error = driver.findElement(By.xpath("/html/body/app-root/app-store-layout/div[1]/div/app-product-sections/app-catalog-event/div/form/div[3]/div[1]/p"));
 		
@@ -212,12 +255,33 @@ public class ACatalog extends BaseClass{
 		  
 		  driver.findElement(By.xpath("//pagination-controls[@responsive='true']/descendant::ul/child::li[5]/child::a")).click();
 		  
-	} 
+		 }
+	}
 		 
 		
 		
-	}
 	
+	@Test(priority=2, description="search the catalog", groups="search")
+	public void SearchCatalog() throws InterruptedException {
+		
+	driver.navigate().refresh();	
+	
+    driver.findElement(By.name("search_bar")).sendKeys(name);
+	
+	System.out.println("Search name: " + name);
+	
+	List<WebElement> catalogN = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/child::div/child::div[2]//div/descendant::div//div/following-sibling::div/descendant::p[1]"));
+	System.out.println("number of Products: " + catalogN.size());
+	List<WebElement> prodN = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/child::div/child::div[2]//div/descendant::div//div/following-sibling::div/descendant::p[2]"));
+	
+	Thread.sleep(2000);
+	for(int i =0; i< catalogN.size(); i++)
+	{
+		//driver.findElement(By.name("search_bar")).sendKeys(catalog_name);
+		System.out.println("Catalog Name : " + catalogN.get(i).getText());
+		System.out.println("Product Count : " + prodN.get(i).getText());
+	}
+	}
 	
 
 }
