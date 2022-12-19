@@ -64,12 +64,7 @@ public class Catlist extends BaseClass{
     		WebElement ProdN = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/child::div/child::div[2]//div/descendant::div//div/following-sibling::div/descendant::p[2]")).get(i);
     		System.out.println("prodN : "+ProdN.getText());
     		
-    		 List<WebElement> chatbox = driver.findElements(By.xpath("//div[@class='win_close sqico-larrow']")); 
     		 
-    		 if(chatbox.size()>0)
-    		 {
-    			 chatbox.get(0).click();
-    		 }
     		//click on view
     		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/child::div/child::div[2]//div/descendant::div//div/descendant::div[2]/descendant::button[contains(text(),'View')]")));
     	    driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/child::div/child::div[2]//div/descendant::div//div/descendant::div[2]/descendant::button[contains(text(),'View')]")).get(i).click();
@@ -89,6 +84,20 @@ public class Catlist extends BaseClass{
         
     	//clicking on back arrow
     	driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/descendant::app-products//div/descendant::div/descendant::div[2]/descendant::span[contains(text(),'arrow_back')]")).click();
+    	try {
+    	wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe")));
+		
+		 System.out.println("frame found and switched ");
+			
+		 WebElement close = driver.findElement(By.xpath("//div[contains(@class,'win_close sqico-larrow')]"));
+			
+		 ac.moveToElement(close).click().build().perform();
+		 System.out.println("closing the frame ");
+    	}catch(Exception e)
+    	{
+    		System.out.println("No frame available");
+    	}
+		 driver.switchTo().defaultContent();
     	
     	
     	Thread.sleep(2000);

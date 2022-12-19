@@ -17,8 +17,8 @@
   <classes>
   <class name="productextras.MeasurementSets"/>
   <class name="productextras.Addon"/>
-<!--  <class name="productextras.productTags"/>
-  <class name="productextras.FAQ"/>
+ <class name="productextras.productTags"/>
+<!--  <class name="productextras.FAQ"/>
   <class name="productextras.FootNote"/>
   <class name="productextras.ImageTags"/>
   

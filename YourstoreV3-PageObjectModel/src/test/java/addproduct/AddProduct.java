@@ -385,7 +385,7 @@ public class AddProduct extends BaseClass {
 		 
 	}
 		 
-		 @Test(priority=7, groups="addproduct")
+		 @Test(priority=7, groups="addproduct", enabled=false)
 		 public void search() throws InterruptedException
 		 {
 			 WebDriverWait wait = new WebDriverWait(driver, 50);

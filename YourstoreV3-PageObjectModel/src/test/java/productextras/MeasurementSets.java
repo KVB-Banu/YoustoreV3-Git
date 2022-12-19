@@ -125,11 +125,28 @@ public class MeasurementSets extends BaseClass{
 			driver.findElement(By.xpath("//div[@class='page_fixedfooter']/descendant::span[contains(text(),'Cancel')]")).click();
 		}
 		
+		try {
+			
+			 Actions ac= new Actions(driver);
+			 wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe")));
+				
+			 System.out.println("frame found and switched ");
+				
+			 WebElement close = driver.findElement(By.xpath("//div[contains(@class,'win_close sqico-larrow')]"));
+				
+			 ac.moveToElement(close).click().build().perform();
+			 System.out.println("closing the frame ");
+			 
+		}catch(Exception e)
+		{
+			System.out.println("No chat box opened");
+		}
+		driver.switchTo().defaultContent();
 		
 	}
 	
 	
-	@Test(priority=2, description="serching the measurement sets", groups="Measure")
+	@Test(priority=2, description="searching the measurement sets", groups="Measure")
 	public void search() {
 		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

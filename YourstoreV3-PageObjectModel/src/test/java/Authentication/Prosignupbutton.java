@@ -17,6 +17,8 @@ public class Prosignupbutton extends BaseClass{
 		obj.executeScript("window.scrollBy(0,500)");
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Sign up')]")));
 		driver.findElements(By.xpath("//button[contains(text(),'Sign up')]")).get(1).click(); // start button=> pro sign up
+		
+		System.out.println("Clicked on Pro- Sign UP");
 	}
 
 }

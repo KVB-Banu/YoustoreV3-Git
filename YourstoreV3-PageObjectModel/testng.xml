@@ -4,10 +4,10 @@
   <test thread-count="5" name="Test">
   
     <classes>
-        <class name="Authentication.Signup"/>
-      <class name="Authentication.GenieSignupPage"/>
-   <!--    <class name="Authentication.Prosignupbutton"/> -->
-   <!--   <class name="Authentication.ProSignup"/> -->
+    <!--    <class name="Authentication.Signup"/>
+      <class name="Authentication.GenieSignupPage"/> -->
+     <class name="Authentication.Prosignupbutton"/> 
+     <class name="Authentication.ProSignup"/>
       
     </classes>
   </test> <!-- Test -->

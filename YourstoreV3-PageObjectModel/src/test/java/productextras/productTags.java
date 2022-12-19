@@ -67,7 +67,7 @@ public class productTags extends BaseClass {
 		}
 		
 		
-	    @Test(priority=15, description="searching the product tags", groups="product tags")
+	    @Test(priority=14, description="searching the product tags", groups="product tags")
 		public void search() throws InterruptedException
 		{
 		
@@ -80,7 +80,7 @@ public class productTags extends BaseClass {
 		}
 		
 		
-	    @Test(priority=14, description="comparing the product tags", groups="product tags")
+	    @Test(priority=15, description="comparing the product tags", groups="product tags")
 		public void tagCompare() throws InterruptedException {
 		
 		WebDriverWait wait = new WebDriverWait(driver, 20);
@@ -101,21 +101,18 @@ public class productTags extends BaseClass {
 		
 		for(int i = 0; i<tagNames.size(); i++)
 		{
-			
+			if(tagNames.size()>1)
+			{
+				driver.findElement(By.xpath("//input[@placeholder='Search']")).clear();
+				driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys(searchKey);
+			}
 			count++;
 			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-product-tags/child::div/child::div[3]/child::div/child::div/child::div/following-sibling::div/descendant::p[1]")));
 			WebElement tagNames1 = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-product-tags/child::div/child::div[3]/child::div/child::div/child::div/following-sibling::div/descendant::p[1]")).get(i);
 			String text1 = tagNames1.getText();
 		//	System.out.println("Tag Name in Product Tags : " + text1);
 			
-             List<WebElement> chatbox = driver.findElements(By.xpath("//div[@class='win_close sqico-larrow']")); 
-    		 
-    		 if(chatbox.size()>0)
-    		 {
-    			 chatbox.get(0).click();
-    		 }
-    		 
-			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class=\"main-content-wrap d-flex flex-column sidenav-open top_space\"]/child::app-product-tags/child::div/child::div[3]/child::div/child::div/child::div/following-sibling::div/descendant::p[2]")));
+            wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class=\"main-content-wrap d-flex flex-column sidenav-open top_space\"]/child::app-product-tags/child::div/child::div[3]/child::div/child::div/child::div/following-sibling::div/descendant::p[2]")));
 			WebElement optionCount1 = driver.findElements(By.xpath("//div[@class=\"main-content-wrap d-flex flex-column sidenav-open top_space\"]/child::app-product-tags/child::div/child::div[3]/child::div/child::div/child::div/following-sibling::div/descendant::p[2]")).get(i);
 			System.out.println(text1 + " => " + optionCount1.getText());
 				
@@ -178,5 +175,33 @@ public class productTags extends BaseClass {
 
 	//	driver.quit();
 	}
+	    
+	    @Test(priority=16, description="removing the product tags", groups="product tags")
+		public void remove()
+		{
+			
+			WebDriverWait wait = new WebDriverWait(driver, 50);
+			//clicking on remove button
+			driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-product-tags/descendant::div[2]/following-sibling::div[2]/descendant::div[3]/following-sibling::div/child::div[2]/descendant::button[1]")).get(4).click();
+			
+			try {
+				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='modal-footer']/child::button[2]")));
+				System.out.println("Remove Yes button is clickable");
+			}catch(Exception e)
+			{
+				System.out.println("Remove Yes button is not clickable");
+			}
+			
+		//	driver.findElement(By.xpath("//div[@class='modal-footer']/child::button[2]")).click();
+			try {
+				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='modal-footer']/child::button[1]")));
+				System.out.println("Remove No button is clickable");
+			}catch(Exception e)
+			{
+				System.out.println("Remove No button is not clickable");
+			}
+			
+			driver.findElement(By.xpath("//div[@class='modal-footer']/child::button[1]")).click();
+		}
 
 }

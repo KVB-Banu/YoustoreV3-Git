@@ -176,7 +176,7 @@ public class ACatalog extends BaseClass{
 		
 	}
 	
-	@Test(priority=1, description="adding catalog", groups="compare")
+	@Test(priority=1, description="comparing catalog", groups="compare", enabled=false)
 	public void catalogCompare() throws Exception {
 		
 		  WebDriverWait wait = new WebDriverWait(driver, 20);
@@ -283,5 +283,48 @@ public class ACatalog extends BaseClass{
 	}
 	}
 	
-
+	@Test(priority=3, description="comparing search item catalog", groups="compare", enabled=true)
+	public void catalogSearchCompare() throws Exception {
+		
+		  WebDriverWait wait = new WebDriverWait(driver, 20);
+		  Actions ac = new Actions(driver);
+		  wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/child::div/child::div[2]//div/descendant::div//div/following-sibling::div/descendant::p[1]")));
+		  List<WebElement> catalogNames = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/child::div/child::div[2]//div/descendant::div//div/following-sibling::div/descendant::p[1]"));
+		 
+		  System.out.println("catalognames size: " + catalogNames.size());
+		  Thread.sleep(3000);
+		  
+		  
+			  String a = catalogNames.get(0).getText();
+			  System.out.println(a);
+			  
+			  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/descendant::div[2]/descendant::div[5]/child::button[contains(text(),'Add Product')]")));
+			  driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/descendant::div[2]/descendant::div[5]/child::button[contains(text(),'Add Product')]")).click();
+			  Thread.sleep(3000);
+			  
+			  JavascriptExecutor obj = (JavascriptExecutor) driver;
+			  obj.executeScript("window.scrollBy(0,610)");
+			  
+			  wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/descendant::app-add-product/descendant::form/child::div[2]/child::div[8]/descendant::div[2]/following-sibling::div/descendant::label/child::span")));
+			  List<WebElement> catalogElementsNameInProduct = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/descendant::app-add-product/descendant::form/child::div[2]/child::div[8]/descendant::div[2]/following-sibling::div/descendant::label/child::span"));
+			 
+			  for(WebElement x : catalogElementsNameInProduct)
+				{
+					String text = x.getText();
+								
+					//	System.out.println("Add on Names in Add product : " + text);
+					Thread.sleep(4000);
+					
+					if(a.contains(text))
+					{
+						System.out.println(text + " Catalog option is present"  );
+	
+					break;
+					}
+					
+					
+				}
+		  }
+	
 }
+

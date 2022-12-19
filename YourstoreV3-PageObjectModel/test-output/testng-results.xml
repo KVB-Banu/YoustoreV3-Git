@@ -1,175 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="1" failed="2" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-08T16:12:28 IST" name="Default suite" finished-at="2022-12-08T16:14:33 IST" duration-ms="124927">
+  <suite started-at="2022-12-08T17:40:57 IST" name="Default suite" finished-at="2022-12-08T17:41:46 IST" duration-ms="49557">
     <groups>
-      <group name="compare">
-        <method signature="ACatalog.catalogCompare()[pri:1, instance:catalog.ACatalog@13e39c73]" name="catalogCompare" class="catalog.ACatalog"/>
-      </group> <!-- compare -->
-      <group name="search">
-        <method signature="ACatalog.SearchCatalog()[pri:2, instance:catalog.ACatalog@13e39c73]" name="SearchCatalog" class="catalog.ACatalog"/>
-      </group> <!-- search -->
-      <group name="adding">
-        <method signature="ACatalog.addCat()[pri:0, instance:catalog.ACatalog@13e39c73]" name="addCat" class="catalog.ACatalog"/>
-      </group> <!-- adding -->
+      <group name="product tags">
+        <method signature="productTags.addProdTags()[pri:13, instance:productextras.productTags@13e39c73]" name="addProdTags" class="productextras.productTags"/>
+        <method signature="productTags.clickPro()[pri:12, instance:productextras.productTags@13e39c73]" name="clickPro" class="productextras.productTags"/>
+        <method signature="productTags.remove()[pri:16, instance:productextras.productTags@13e39c73]" name="remove" class="productextras.productTags"/>
+        <method signature="productTags.search()[pri:14, instance:productextras.productTags@13e39c73]" name="search" class="productextras.productTags"/>
+        <method signature="productTags.tagCompare()[pri:15, instance:productextras.productTags@13e39c73]" name="tagCompare" class="productextras.productTags"/>
+      </group> <!-- product tags -->
     </groups>
-    <test started-at="2022-12-08T16:12:28 IST" name="Default test" finished-at="2022-12-08T16:14:33 IST" duration-ms="124927">
-      <class name="catalog.ACatalog">
-        <test-method is-config="true" signature="openBrowser()[pri:0, instance:catalog.ACatalog@13e39c73]" started-at="2022-12-08T16:12:27 IST" name="openBrowser" finished-at="2022-12-08T16:12:28 IST" duration-ms="1780" status="PASS">
+    <test started-at="2022-12-08T17:40:57 IST" name="Default test" finished-at="2022-12-08T17:41:46 IST" duration-ms="49557">
+      <class name="productextras.productTags">
+        <test-method is-config="true" signature="openBrowser()[pri:0, instance:productextras.productTags@13e39c73]" started-at="2022-12-08T17:40:55 IST" name="openBrowser" finished-at="2022-12-08T17:40:57 IST" duration-ms="1769" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method is-config="true" signature="openUrl()[pri:0, instance:catalog.ACatalog@13e39c73]" started-at="2022-12-08T16:12:28 IST" name="openUrl" finished-at="2022-12-08T16:12:32 IST" duration-ms="3634" status="PASS">
+        <test-method is-config="true" signature="openUrl()[pri:0, instance:productextras.productTags@13e39c73]" started-at="2022-12-08T17:40:57 IST" name="openUrl" finished-at="2022-12-08T17:41:00 IST" duration-ms="3162" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openUrl -->
-        <test-method is-config="true" signature="clickPro()[pri:0, instance:catalog.ACatalog@13e39c73]" started-at="2022-12-08T16:12:32 IST" name="clickPro" finished-at="2022-12-08T16:12:34 IST" duration-ms="1750" status="PASS">
+        <test-method signature="clickPro()[pri:12, instance:productextras.productTags@13e39c73]" started-at="2022-12-08T17:41:00 IST" name="clickPro" description="clicking on the product" finished-at="2022-12-08T17:41:05 IST" duration-ms="5076" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickPro -->
-        <test-method signature="addCat()[pri:0, instance:catalog.ACatalog@13e39c73]" started-at="2022-12-08T16:12:34 IST" name="addCat" description="adding catalog" finished-at="2022-12-08T16:13:14 IST" duration-ms="40184" status="PASS">
+        <test-method signature="addProdTags()[pri:13, instance:productextras.productTags@13e39c73]" started-at="2022-12-08T17:41:05 IST" name="addProdTags" description="Adding the product tags" finished-at="2022-12-08T17:41:06 IST" duration-ms="841" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addCat -->
-        <test-method signature="catalogCompare()[pri:1, instance:catalog.ACatalog@13e39c73]" started-at="2022-12-08T16:13:14 IST" name="catalogCompare" description="adding catalog" finished-at="2022-12-08T16:14:33 IST" duration-ms="79253" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchWindowException">
-            <message>
-              <![CDATA[no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=108.0.5359.98)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-8O9USS3', ip: '172.16.1.18', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.98, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\white\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50680}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 9608a7c2b30f4318825db0dce621cc71]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=108.0.5359.98)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-8O9USS3', ip: '172.16.1.18', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.98, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\white\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50680}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 9608a7c2b30f4318825db0dce621cc71
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:489)
-at catalog.ACatalog.catalogCompare(ACatalog.java:204)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+        </test-method> <!-- addProdTags -->
+        <test-method signature="search()[pri:14, instance:productextras.productTags@13e39c73]" started-at="2022-12-08T17:41:06 IST" name="search" description="searching the product tags" finished-at="2022-12-08T17:41:10 IST" duration-ms="4180" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- catalogCompare -->
-        <test-method signature="SearchCatalog()[pri:2, instance:catalog.ACatalog@13e39c73]" started-at="2022-12-08T16:14:33 IST" name="SearchCatalog" description="search the catalog" finished-at="2022-12-08T16:14:33 IST" duration-ms="14" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchWindowException">
-            <message>
-              <![CDATA[no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=108.0.5359.98)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-8O9USS3', ip: '172.16.1.18', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.98, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\white\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50680}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 9608a7c2b30f4318825db0dce621cc71]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=108.0.5359.98)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-8O9USS3', ip: '172.16.1.18', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.98, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\white\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50680}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 9608a7c2b30f4318825db0dce621cc71
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
-at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.refresh(RemoteWebDriver.java:865)
-at catalog.ACatalog.SearchCatalog(ACatalog.java:267)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+        </test-method> <!-- search -->
+        <test-method signature="tagCompare()[pri:15, instance:productextras.productTags@13e39c73]" started-at="2022-12-08T17:41:10 IST" name="tagCompare" description="comparing the product tags" finished-at="2022-12-08T17:41:46 IST" duration-ms="36030" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SearchCatalog -->
-      </class> <!-- catalog.ACatalog -->
+        </test-method> <!-- tagCompare -->
+        <test-method signature="remove()[pri:16, instance:productextras.productTags@13e39c73]" started-at="2022-12-08T17:41:46 IST" name="remove" description="removing the product tags" finished-at="2022-12-08T17:41:46 IST" duration-ms="216" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- remove -->
+      </class> <!-- productextras.productTags -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
