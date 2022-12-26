@@ -19,11 +19,23 @@ public class Edit extends BaseClass {
 	static String description = "test 01";
 	
 	@Test(priority=0, description="clicking on the product", groups="edit")
-	public void clickPro() {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	public void clickPro() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 50);
 		
 		
-		driver.findElement(By.xpath("//span[normalize-space()='Products']")).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+				"//div[@class='accordion menu-scroll']/child::div[2]/descendant::span[contains(text(),'Products')]")));
+		driver.findElement(By.xpath(
+				"//div[@class='accordion menu-scroll']/child::div[2]/descendant::span[contains(text(),'Products')]"))
+				.click();
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+				"//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/descendant::div[2]/descendant::a[contains(text(),'Catalogs')]")));
+		driver.findElement(By.xpath(
+				"//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/descendant::div[2]/descendant::a[contains(text(),'Catalogs')]"))
+				.click();
+		Thread.sleep(3000);
 		
 	   }
 

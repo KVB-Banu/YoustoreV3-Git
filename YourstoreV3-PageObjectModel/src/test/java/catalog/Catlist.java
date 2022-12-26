@@ -23,7 +23,10 @@ public class Catlist extends BaseClass{
 		driver.findElement(By.xpath("//div[@class='accordion menu-scroll']/child::div[2]/descendant::span[contains(text(),'Products')]")).click();
 		Thread.sleep(3000);
 	
-	Actions ac = new Actions(driver);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/descendant::div[2]/descendant::a[contains(text(),'Catalogs')]")));
+		driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/descendant::div[2]/descendant::a[contains(text(),'Catalogs')]")).click();
+		Thread.sleep(3000);
+		Actions ac = new Actions(driver);
 		
 //	wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//p[normalize-space()='Catalog Name']")));
 	
@@ -72,8 +75,8 @@ public class Catlist extends BaseClass{
     	Thread.sleep(3000);
         
     	// inside product count
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/descendant::app-products//div/descendant::div[3]/following-sibling::div/child::p")));//div[@class='col-md-6 d-flex justify-content-end ng-tns-c87-1']/child::p
-    	String insidePCount = driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/descendant::app-products//div/descendant::div[3]/following-sibling::div/child::p")).getText();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/descendant::app-products//div/descendant::div[3]/following-sibling::div/child::p")));
+    	String insidePCount = driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/descendant::app-products//div/descendant::div[3]/following-sibling::div/child::p")).getText();
     	System.out.println("inside Product  : " + insidePCount.substring(6));
     	
     	System.out.println(count);
@@ -83,7 +86,10 @@ public class Catlist extends BaseClass{
     	Thread.sleep(2000);
         
     	//clicking on back arrow
-    	driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/descendant::app-products//div/descendant::div/descendant::div[2]/descendant::span[contains(text(),'arrow_back')]")).click();
+//    	driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/descendant::app-products//div/descendant::div/descendant::div[2]/descendant::span[contains(text(),'arrow_back')]")).click();
+       
+    	driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/descendant::a[normalize-space()='Catalogs']")).click();
+    	
     	try {
     	wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe")));
 		
@@ -106,48 +112,49 @@ public class Catlist extends BaseClass{
   
     }    
     
-    driver.findElement(By.xpath("//pagination-controls[@responsive='true']/descendant::ul/child::li[5]/child::a")).click();
-    Thread.sleep(3000);
-    System.out.println("count: " + catalogN.size() +" & " + prodN.size());
-    for(int i =0; i<catalogN.size(); i++)
-    {
-    
-    	count++;
-    	Thread.sleep(2000);
-
-    		WebElement catN = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/child::div/child::div[2]//div/descendant::div//div/following-sibling::div/descendant::p[1]")).get(i);
-    		System.out.println("catalog Name: " + catN.getText());
-    		Thread.sleep(2000);
-    		WebElement ProdN = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/child::div/child::div[2]//div/descendant::div//div/following-sibling::div/descendant::p[2]")).get(i);
-    		System.out.println("prodN : "+ProdN.getText());
-    		
-    		
-    		//click on view
-    		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/child::div/child::div[2]//div/descendant::div//div/descendant::div[2]/descendant::button[contains(text(),'View')]")));
-    	    driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/child::div/child::div[2]//div/descendant::div//div/descendant::div[2]/descendant::button[contains(text(),'View')]")).get(i).click();
-
-    	Thread.sleep(3000);
-        
-    	// inside product count
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/descendant::app-products//div/descendant::div[3]/following-sibling::div/child::p")));//div[@class='col-md-6 d-flex justify-content-end ng-tns-c87-1']/child::p
-    	String insidePCount = driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/descendant::app-products//div/descendant::div[3]/following-sibling::div/child::p")).getText();
-    	System.out.println("inside Product  : " + insidePCount.substring(6));
-    	
-    	System.out.println(count);
-    	
-   // 	insidePCount.codePointCount(6,16);
-
-    	Thread.sleep(2000);
-        
-    	//clicking on back arrow
-    	driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/descendant::app-products//div/descendant::div/descendant::div[2]/descendant::span[contains(text(),'arrow_back')]")).click();
-    	
-    	
-    	Thread.sleep(2000);
-    	
+//    driver.findElement(By.xpath("//pagination-controls[@responsive='true']/descendant::ul/child::li[5]/child::a")).click();
+//    Thread.sleep(3000);
+//    System.out.println("count: " + catalogN.size() +" & " + prodN.size());
+//    for(int i =0; i<catalogN.size(); i++)
+//    {
+//    
+//    	count++;
+//    	Thread.sleep(2000);
+//
+//    		WebElement catN = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/child::div/child::div[2]//div/descendant::div//div/following-sibling::div/descendant::p[1]")).get(i);
+//    		System.out.println("catalog Name: " + catN.getText());
+//    		Thread.sleep(2000);
+//    		WebElement ProdN = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/child::div/child::div[2]//div/descendant::div//div/following-sibling::div/descendant::p[2]")).get(i);
+//    		System.out.println("prodN : "+ProdN.getText());
+//    		
+//    		
+//    		//click on view
+//    		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/child::div/child::div[2]//div/descendant::div//div/descendant::div[2]/descendant::button[contains(text(),'View')]")));
+//    	    driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/child::div/child::div[2]//div/descendant::div//div/descendant::div[2]/descendant::button[contains(text(),'View')]")).get(i).click();
+//
+//    	Thread.sleep(3000);
+//        
+//    	// inside product count
+//    	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/descendant::app-products/child::div/descendant::div[3]/following-sibling::div/child::p")));//div[@class='col-md-6 d-flex justify-content-end ng-tns-c87-1']/child::p
+//    	String insidePCount = driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/descendant::app-products/child::div/descendant::div[3]/following-sibling::div/child::p")).getText();
+//    	System.out.println("inside Product  : " + insidePCount.substring(6));
+//    	
+//    	System.out.println(count);
+//    	
+//   // 	insidePCount.codePointCount(6,16);
+//
+//    	Thread.sleep(2000);
+//        
+//    	//clicking on back arrow
+//    //	driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/descendant::app-products//div/descendant::div/descendant::div[2]/descendant::span[contains(text(),'arrow_back')]")).click();
+//    	
+//    	// clicking on Catalog
+//    	
+//    	Thread.sleep(2000);
+//    	
     	
   
-    }    
+ //   }    
    
 //    for(int i =0; i<catalogN.size();i++)
 //    {
@@ -166,7 +173,7 @@ public class Catlist extends BaseClass{
 //        System.out.println(m.getKey()+"  =>  "+ m.getValue());//get values
 //        
 //    }
-    Thread.sleep(3000);
+//    Thread.sleep(3000);
     System.out.println("Completed");
 //    driver.quit();
 //	

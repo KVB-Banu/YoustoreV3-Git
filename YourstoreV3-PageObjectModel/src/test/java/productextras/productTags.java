@@ -124,10 +124,10 @@ public class productTags extends BaseClass {
 			driver.findElement(By.xpath("/html/body/app-root/app-store-layout/div[1]/div[3]/app-product-tags/div/div[1]/div/div/div/span")).click();
 			
 			// catalog and products
-			driver.findElement(By.xpath("//a[normalize-space()='Catalog & Products']")).click();
+			driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']//a[normalize-space()='Products']")).click();
 			
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/app-root/app-store-layout/div[1]/div[3]/app-product-sections/app-catalogs/div/div[1]/div/div[2]/button[3]")));
-			WebElement addpro = driver.findElement(By.xpath("/html/body/app-root/app-store-layout/div[1]/div[3]/app-product-sections/app-catalogs/div/div[1]/div/div[2]/button[3]"));
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-products/child::div/child::div[2]/child::div/descendant::button[contains(text(),'Add Product')]")));
+			WebElement addpro = driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-products/child::div/child::div[2]/child::div/descendant::button[contains(text(),'Add Product')]"));
 			ac.click(addpro).build().perform();
 			
 			//driver.findElement(By.xpath("//div[@class='top-filter-sec list-button mt-2 ng-tns-c90-2']//button[3]")).click();
@@ -182,14 +182,14 @@ public class productTags extends BaseClass {
 			
 			WebDriverWait wait = new WebDriverWait(driver, 50);
 			//clicking on remove button
-			driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-product-tags/descendant::div[2]/following-sibling::div[2]/descendant::div[3]/following-sibling::div/child::div[2]/descendant::button[1]")).get(4).click();
+			driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-product-tags/descendant::div[2]/following-sibling::div[2]/descendant::div[3]/following-sibling::div/child::div[2]/descendant::button[1]")).get(1).click();
 			
 			try {
 				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='modal-footer']/child::button[2]")));
 				System.out.println("Remove Yes button is clickable");
 			}catch(Exception e)
 			{
-				System.out.println("Remove Yes button is not clickable");
+				System.err.println("Remove Yes button is not clickable");
 			}
 			
 		//	driver.findElement(By.xpath("//div[@class='modal-footer']/child::button[2]")).click();
@@ -198,7 +198,7 @@ public class productTags extends BaseClass {
 				System.out.println("Remove No button is clickable");
 			}catch(Exception e)
 			{
-				System.out.println("Remove No button is not clickable");
+				System.err.println("Remove No button is not clickable");
 			}
 			
 			driver.findElement(By.xpath("//div[@class='modal-footer']/child::button[1]")).click();

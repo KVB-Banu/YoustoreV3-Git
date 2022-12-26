@@ -33,7 +33,7 @@ public class FootNote extends BaseClass{
 			+ "in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, "
 			+ "sunt in culpa qui officia deserunt mollit anim id est laborum.";
 	
-	@Test(priority=0, description="clicking on the product", groups="FootNote")
+	@Test(priority=17, description="clicking on the product", groups="FootNote")
 	public void clickPro() throws InterruptedException
 	{
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
@@ -42,7 +42,7 @@ public class FootNote extends BaseClass{
         driver.findElement(By.xpath("//label[contains(text(),'Footnote')]")).click();
     }
 
-	@Test(priority=1, description="Adding the Foot note", groups="FootNote")
+	@Test(priority=18, description="Adding the Foot note", groups="FootNote")
 	public void AddFN() throws InterruptedException
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 20);
@@ -84,7 +84,7 @@ public class FootNote extends BaseClass{
 	}
 	
 	
-	@Test(priority=2, description="searching the footnote", groups="FootNote")
+	@Test(priority=19, description="searching the footnote", groups="FootNote")
 	public void search() throws InterruptedException
 	{
 	 driver.findElement(By.name("search_bar")).sendKeys(footName);
@@ -95,7 +95,7 @@ public class FootNote extends BaseClass{
 	}
 	
 	
-	@Test(priority=3, description="comparing options", groups="FootNote")
+	@Test(priority=20, description="comparing options", groups="FootNote")
 	public void compareOptions() throws InterruptedException
 	{
 		
@@ -151,7 +151,7 @@ public class FootNote extends BaseClass{
 	
 	
 	
-	@Test(priority=4, description="comparing foot note", groups="FootNote")
+	@Test(priority=21, description="comparing foot note", groups="FootNote")
 	public void compareFootNote() throws InterruptedException
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 20);
@@ -230,13 +230,13 @@ public class FootNote extends BaseClass{
 		}
 	}
 	
-	@Test(priority=5, description="removing the foot note", groups="FootNote")
+	@Test(priority=22, description="removing the foot note", groups="FootNote")
 	public void remove()
 	{
 		
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		//clicking on remove button
-		driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-foot-note/descendant::div[2]/following-sibling::div[2]/descendant::div[3]/following-sibling::div/child::div[2]/descendant::button[1]")).get(4).click();
+		driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-foot-note/descendant::div[2]/following-sibling::div[2]/descendant::div[3]/following-sibling::div/child::div[2]/descendant::button[1]")).get(0).click();
 		
 		try {
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='modal-footer']/child::button[2]")));

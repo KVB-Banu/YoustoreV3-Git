@@ -158,6 +158,9 @@ public class Addon extends BaseClass{
 	@Test(priority=8, description="search the addon", groups="addon", enabled=true)
     public void search() throws InterruptedException
 		{
+		
+		WebDriverWait wait = new WebDriverWait(driver, 50);
+		wait.until(ExpectedConditions.elementToBeClickable(By.name("search_bar")));
 		 driver.findElement(By.name("search_bar")).sendKeys(addOnName);
 		 
 		 List<WebElement> addOnNames = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']//child::app-addons/descendant::div/child::div[3]/descendant::div[3]/following-sibling::div/descendant::p[1]"));
@@ -170,6 +173,7 @@ public class Addon extends BaseClass{
     public void addOnCompare() throws Exception
 		{
 			WebDriverWait wait = new WebDriverWait(driver, 50);
+			Actions ac= new Actions(driver);
 			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']//child::app-addons/descendant::div/child::div[3]/descendant::div[3]/following-sibling::div/descendant::p[1]")));
 			List<WebElement> addOnNames = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']//child::app-addons/descendant::div/child::div[3]/descendant::div[3]/following-sibling::div/descendant::p[1]"));
 			System.out.println("size of AddonNames: " +addOnNames.size());
@@ -188,15 +192,34 @@ public class Addon extends BaseClass{
 				driver.findElement(By.xpath("//span[normalize-space()='Products']")).click();
 				Thread.sleep(3000);
 				try {
-				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/descendant::div[2]/descendant::div[5]/child::button[contains(text(),'Add Product')]")));
-				driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/descendant::div[2]/descendant::div[5]/child::button[contains(text(),'Add Product')]")).click();
-				Thread.sleep(3000);
+					
+					
+					 wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe")));
+						
+					 System.out.println("frame found and switched ");
+						
+					 WebElement close = driver.findElement(By.xpath("//div[contains(@class,'win_close sqico-larrow')]"));
+						
+					 ac.moveToElement(close).click().build().perform();
+					 System.out.println("closing the frame ");
+					 
 				}catch(Exception e)
 				{
-					wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/descendant::div[2]/descendant::div[5]/child::button[contains(text(),'Add Product')]")));
-					driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/descendant::div[2]/descendant::div[5]/child::button[contains(text(),'Add Product')]")).click();
-					Thread.sleep(3000);
+					System.out.println("No chat box opened");
 				}
+				driver.switchTo().defaultContent();
+				
+				try {
+				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-products/child::div/child::div[2]/child::div/descendant::button[contains(text(),'Add Product')]")));
+				driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-products/child::div/child::div[2]/child::div/descendant::button[contains(text(),'Add Product')]")).click();
+				
+				}catch(Exception e)
+				{
+					wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-products/child::div/child::div[2]/child::div/descendant::button[contains(text(),'Add Product')]")));
+					driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-products/child::div/child::div[2]/child::div/descendant::button[contains(text(),'Add Product')]")).click();
+					Thread.sleep(5000);
+				}
+				
 				JavascriptExecutor obj = (JavascriptExecutor) driver;
 				obj.executeScript("window.scrollBy(0,1500)");
 				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='Apply Add-Ons']")));
@@ -220,6 +243,8 @@ public class Addon extends BaseClass{
 	
 					break;
 					}
+					
+					
 				}
 				
 				System.out.println(count);

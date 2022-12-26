@@ -33,6 +33,9 @@ public class ACatalog extends BaseClass{
 		
 		driver.findElement(By.xpath("//span[normalize-space()='Products']")).click();
 		
+		driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/descendant::div[2]/descendant::a[contains(text(),'Catalogs')]")).click();
+		
+		
 	   }
 	   
 	@Test(priority=0, description="adding catalog", groups="adding")	
@@ -196,8 +199,8 @@ public class ACatalog extends BaseClass{
 			  String a = catalogNames1.getText();
 			  System.out.println(a);
 			  
-			  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/descendant::div[2]/descendant::div[5]/child::button[contains(text(),'Add Product')]")));
-			  driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/descendant::div[2]/descendant::div[5]/child::button[contains(text(),'Add Product')]")).click();
+			  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-products/child::div/child::div[2]/child::div/descendant::button[contains(text(),'Add Product')]")));
+			  driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-products/child::div/child::div[2]/child::div/descendant::button[contains(text(),'Add Product')]")).click();
 			  Thread.sleep(3000);
 			  
 			  JavascriptExecutor obj = (JavascriptExecutor) driver;
@@ -298,8 +301,10 @@ public class ACatalog extends BaseClass{
 			  String a = catalogNames.get(0).getText();
 			  System.out.println(a);
 			  
-			  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/descendant::div[2]/descendant::div[5]/child::button[contains(text(),'Add Product')]")));
-			  driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/descendant::div[2]/descendant::div[5]/child::button[contains(text(),'Add Product')]")).click();
+			  driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/descendant::a[normalize-space()='Products']")).click();
+			  
+			  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-products/child::div/child::div[2]/child::div/descendant::button[contains(text(),'Add Product')]")));
+			  driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-products/child::div/child::div[2]/child::div/descendant::button[contains(text(),'Add Product')]")).click();
 			  Thread.sleep(3000);
 			  
 			  JavascriptExecutor obj = (JavascriptExecutor) driver;

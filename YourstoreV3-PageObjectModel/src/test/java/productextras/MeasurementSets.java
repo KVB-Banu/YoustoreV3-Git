@@ -20,6 +20,8 @@ public class MeasurementSets extends BaseClass{
 	static String name = "bangle" ;
 	static String value = "70000";
 	static String msvalue ="50";
+	public static final String ANSI_RESET = "\u001B[0m";
+	public static final String ANSI_RED = "\\u001B[41m";
 	
 	@Test(priority=0, description="clicking on the product", groups="Measure")
 	public void clickProd() {
@@ -38,31 +40,29 @@ public class MeasurementSets extends BaseClass{
 	@Test(priority=1, description="adding measurement sets", groups="Measure")
 	public void measure() throws IOException, InterruptedException {
 		
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 50);
+		Actions ac = new Actions(driver);
 		
 		try {
-		       wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@type='button'])[1]")));
+		       wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-measurements/child::div/child::div[2]/descendant::button[contains(text(),'Add Measurement Set ')]")));
 		       System.out.println("Element is clickable");
+		       
+		       driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-measurements/child::div/child::div[2]/descendant::button[contains(text(),'Add Measurement Set ')]")).click();
 		     }
 		catch(TimeoutException e) {
-		       System.out.println("Element isn't clickable");
+		       System.err.println("Element isn't clickable");
 		    }
 				
-		driver.findElement(By.xpath("(//button[@type='button'])[1]")).click();
 		
-		 List<WebElement> chatbox = driver.findElements(By.xpath("//div[@class='win_close sqico-larrow']")); 
-		 
-		 if(chatbox.size()>0)
-		 {
-			 chatbox.get(0).click();
-		 }
+		
+				
 		
 		try {
 		       wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//i[@class='material-icons add-img']")));
 		       System.out.println("Image Element is clickable");
 		     }
 		catch(TimeoutException e) {
-		       System.out.println("Image Element isn't clickable");
+		       System.err.println("Image Element isn't clickable");
 		    }
 		
 		driver.findElement(By.xpath("//i[@class='material-icons add-img']")).click();
@@ -86,7 +86,7 @@ public class MeasurementSets extends BaseClass{
 		       System.out.println("Add unit button is clickable");
 		     }
 		catch(TimeoutException e) {
-		       System.out.println("Add unit button isn't clickable");
+		       System.err.println("Add unit button isn't clickable");
 		    }
 		
 		driver.findElement(By.xpath("/html/body/app-root/app-store-layout/div[1]/div[3]/app-measurement-events/div/form/div[1]/div[2]/div[4]/div[1]/div/div/div/div/input")).sendKeys(msvalue);
@@ -96,7 +96,7 @@ public class MeasurementSets extends BaseClass{
 		       System.out.println("Add Measurement button is clickable");
 		     }
 		catch(TimeoutException e) {
-		       System.out.println("Add Measurement button isn't clickable");
+		       System.err.println("Add Measurement button isn't clickable");
 		    }
 		
 		try {
@@ -104,7 +104,7 @@ public class MeasurementSets extends BaseClass{
 		       System.out.println("Add button is clickable");
 		     }
 		catch(TimeoutException e) {
-		       System.out.println("Add button isn't clickable");
+		       System.err.println("Add button isn't clickable");
 		    }
 		driver.findElement(By.xpath("(//span[@class='ladda-label'])[1]")).click();
 		Thread.sleep(5000);
@@ -119,7 +119,7 @@ public class MeasurementSets extends BaseClass{
 			       System.out.println("Cancel button is clickable");
 			     }
 			catch(TimeoutException e) {
-			       System.out.println("Cancel button isn't clickable");
+			       System.err.println("Cancel button isn't clickable");
 			    }
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='page_fixedfooter']/descendant::span[contains(text(),'Cancel')]")));
 			driver.findElement(By.xpath("//div[@class='page_fixedfooter']/descendant::span[contains(text(),'Cancel')]")).click();
@@ -127,7 +127,7 @@ public class MeasurementSets extends BaseClass{
 		
 		try {
 			
-			 Actions ac= new Actions(driver);
+		
 			 wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe")));
 				
 			 System.out.println("frame found and switched ");
@@ -170,19 +170,25 @@ public class MeasurementSets extends BaseClass{
 		       System.out.println("View button is clickable");
 		     }
 		catch(TimeoutException e) {
-		       System.out.println("View button isn't clickable");
+		       System.err.println("View button isn't clickable");
 		    }
 		driver.findElement(By.xpath("//body[1]/app-root[1]/app-store-layout[1]/div[1]/div[3]/app-measurements[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[3]/div[1]/button[2]")).click();
 		
 //		JavascriptExecutor obj = (JavascriptExecutor) driver;
 //		obj.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+		try {
 		driver.findElement(By.xpath("//span[@class='material-icons round-img-icon ab-item-close']")).click();
+		}catch(Exception e)
+		{
+			System.out.println("Image is not there");
+			driver.findElement(By.xpath("//i[@class='material-icons add-img']")).click();
+			Thread.sleep(3000);
+			
+			Runtime.getRuntime().exec("C:\\Users\\white\\OneDrive\\Desktop\\Jewel images\\image1.exe");
+			Thread.sleep(3000);
+			
+		}
 		
-		driver.findElement(By.xpath("//i[@class='material-icons add-img']")).click();
-		Thread.sleep(3000);
-		
-		Runtime.getRuntime().exec("C:\\Users\\white\\OneDrive\\Desktop\\Jewel images\\image1.exe");
-		Thread.sleep(3000);
 		
 		WebElement mname = driver.findElement(By.xpath("//input[@name='name']"));
 		ac.doubleClick(mname).sendKeys(name).build().perform();
@@ -196,7 +202,7 @@ public class MeasurementSets extends BaseClass{
 		        System.out.println("Update button is clickable");
 	     }
 	      catch(TimeoutException e) {
-	       System.out.println("Update button isn't clickable");
+	       System.err.println("Update button isn't clickable");
 	    }
 		
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
@@ -213,7 +219,7 @@ public class MeasurementSets extends BaseClass{
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[2]//div[3]//div[1]//button[1]")));
 		System.out.println("Remove button is Clickable");
 		}catch(Exception e) {
-			System.out.println("Remove button isn't Clickable");
+			System.err.println("Remove button isn't Clickable");
 		
 		}
 		driver.findElement(By.xpath("//div[2]//div[3]//div[1]//button[1]")).click();
@@ -226,7 +232,7 @@ public class MeasurementSets extends BaseClass{
 		        
 	     }
 	      catch(TimeoutException e) {
-	       System.out.println("yes button isn't clickable");
+	       System.err.println("yes button isn't clickable");
 	    }
 		
 	//	 WebElement yes = driver.findElement(By.cssSelector("//div[@class='modal-footer']/descendant::span[contains(text(),'Yes')]"));
@@ -237,10 +243,10 @@ public class MeasurementSets extends BaseClass{
 		        System.out.println("No button is clickable");
 	     }
 	      catch(TimeoutException e) {
-	       System.out.println("No button isn't clickable");
+	       System.err.println("No button isn't clickable");
 	    }
 	
-		
+		driver.findElement(By.xpath("//div[@class='modal-footer']/descendant::span[contains(text(),'No')]")).click();
 		 wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe")));
 			
 		 System.out.println("frame found and switched ");
@@ -251,7 +257,7 @@ public class MeasurementSets extends BaseClass{
 		 System.out.println("closing the frame ");
 		 driver.switchTo().defaultContent();
 		 
-		driver.findElement(By.xpath("//div[@class='modal-footer']/descendant::span[contains(text(),'No')]")).click();
+	//	driver.findElement(By.xpath("//div[@class='modal-footer']/descendant::span[contains(text(),'No')]")).click();
 	}
 
 	
