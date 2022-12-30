@@ -43,7 +43,7 @@ public class FootNote extends BaseClass{
     }
 
 	@Test(priority=18, description="Adding the Foot note", groups="FootNote")
-	public void AddFN() throws InterruptedException
+	public void AddFN() throws InterruptedException 
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Add Footnote')]")));
@@ -191,24 +191,39 @@ public class FootNote extends BaseClass{
 			driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-foot-note/descendant::span[1]")).click();
 			
 			// catalog and products
-			driver.findElement(By.xpath("//a[normalize-space()='Catalog & Products']")).click();
+			driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']//a[normalize-space()='Products']")).click();
 			
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/app-root/app-store-layout/div[1]/div[3]/app-product-sections/app-catalogs/div/div[1]/div/div[2]/button[3]")));
-			WebElement addpro = driver.findElement(By.xpath("/html/body/app-root/app-store-layout/div[1]/div[3]/app-product-sections/app-catalogs/div/div[1]/div/div[2]/button[3]"));
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-products/child::div/child::div[2]/child::div/descendant::button[contains(text(),'Add Product')]")));
+			WebElement addpro = driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-products/child::div/child::div[2]/child::div/descendant::button[contains(text(),'Add Product')]"));
 			ac.click(addpro).build().perform();
 			
 			//driver.findElement(By.xpath("//div[@class='top-filter-sec list-button mt-2 ng-tns-c90-2']//button[3]")).click();
 			
+			JavascriptExecutor obj = (JavascriptExecutor) driver;
+			obj.executeScript("window.scrollBy(0,910)");
+			
 			driver.findElement(By.xpath("//span[normalize-space()='Apply Foot Note']")).click();
 			
 			Thread.sleep(2000);
-			
-			JavascriptExecutor obj = (JavascriptExecutor) driver;
-			obj.executeScript("window.scrollBy(0,810)");
+					
 			
 			List<WebElement> proFootNote = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-product-sections/child::div/following-sibling::app-add-product/child::div/child::form/child::div[2]/following-sibling::div[2]/descendant::div[2]/child::div[2]/descendant::div[2]/following-sibling::div[5]//descendant::div[1]/following-sibling::div/descendant::b"));
 			System.out.println("size of FootNote in product page: " + proFootNote.size());
 			
+			try {
+		    	wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe")));
+				
+				 System.out.println("frame found and switched ");
+					
+				 WebElement close = driver.findElement(By.xpath("//div[contains(@class,'win_close sqico-larrow')]"));
+					
+				 ac.moveToElement(close).click().build().perform();
+				 System.out.println("closing the frame ");
+		    	}catch(Exception e)
+		    	{
+		    		System.out.println("No frame available");
+		    	}
+				 driver.switchTo().defaultContent();
 		
 			for(int j =0; j< proFootNote.size(); j++)
 			{
@@ -243,7 +258,7 @@ public class FootNote extends BaseClass{
 			System.out.println("Remove Yes button is clickable");
 		}catch(Exception e)
 		{
-			System.out.println("Remove Yes button is not clickable");
+			System.err.println("Remove Yes button is not clickable");
 		}
 		
 	//	driver.findElement(By.xpath("//div[@class='modal-footer']/child::button[2]")).click();
@@ -252,10 +267,11 @@ public class FootNote extends BaseClass{
 			System.out.println("Remove No button is clickable");
 		}catch(Exception e)
 		{
-			System.out.println("Remove No button is not clickable");
+			System.err.println("Remove No button is not clickable");
 		}
 		
-	}
+		driver.findElement(By.xpath("//div[@class='modal-footer']/child::button[1]")).click();
+		}
 	
 	
 	

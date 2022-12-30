@@ -41,10 +41,11 @@ public class ACatalog extends BaseClass{
 	@Test(priority=0, description="adding catalog", groups="adding")	
    public void addCat() throws IOException, InterruptedException {
 		
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 50);
 		Actions ac = new Actions(driver);
 		
-		driver.findElement(By.xpath("//button[@routerlink='/product-sections/catalogs/add']")).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/descendant::app-catalogs/child::div/descendant::button[contains(text(),'Add Catalog ')]")));
+		driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/descendant::app-catalogs/child::div/descendant::button[contains(text(),'Add Catalog ')]")).click();
 		driver.findElement(By.xpath("//i[@class='material-icons add-img']")).click();
 		
 		Runtime.getRuntime().exec("C:\\Users\\white\\OneDrive\\Desktop\\Jewel images\\image4.exe");
@@ -56,14 +57,14 @@ public class ACatalog extends BaseClass{
 		
 		driver.findElement(By.xpath("//div[@class='ql-editor ql-blank']")).sendKeys(description);
 		
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='Enable Page Content']")));
-		driver.findElement(By.xpath("//span[normalize-space()='Enable Page Content']")).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='Enable Header Content']")));
+		driver.findElement(By.xpath("//span[normalize-space()='Enable Header Content']")).click();
 		
 		
 		obj.executeScript("window.scrollBy(0,600)");
 		
-		wait.until(ExpectedConditions.elementToBeClickable(By.name("title")));
-		driver.findElement(By.name("title")).sendKeys("yourstr");
+//		wait.until(ExpectedConditions.elementToBeClickable(By.name("title")));
+//		driver.findElement(By.name("title")).sendKeys("yourstr");
 		
 		driver.findElement(By.xpath("//quill-editor[@class='rounded ng-untouched ng-pristine ng-valid']//div[@class='ql-editor ql-blank']")).sendKeys(description);
 		
@@ -79,32 +80,34 @@ public class ACatalog extends BaseClass{
 //		       System.out.println("Element isn't clickable");
 //		    }
 		
+//		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='light-button']")));
+//		driver.findElement(By.xpath("//button[@class='light-button']")).click();
+//		Thread.sleep(4000);
 		
-		driver.findElement(By.xpath("//button[@class='light-button']")).click();
-		Thread.sleep(4000);
-		
-		obj.executeScript("window.scrollBy(0,400)");
+	//	obj.executeScript("window.scrollBy(0,300)");
 	//	driver.switchTo().frame(0);
-		Select s = new Select(driver.findElement(By.xpath("/html/body/app-root/app-store-layout/div[1]/div[3]/app-product-sections/app-catalog-event/div/form/div[1]/div[2]/div[1]/div[7]/div/div/div/div/div[1]/select")));
-		s.selectByIndex(0);
-				
-	    List<WebElement> op = s.getOptions();
-		 		
-		for(int i=0; i<op.size();i++)
-		{
-			
-			String options = op.get(i).getText();
-			System.out.println("options are : " + options);
-			
-		}
-		Thread.sleep(1000);
-		try {
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='form-control ng-pristine ng-invalid ng-touched']")));
-		driver.findElement(By.xpath("//input[@class='form-control ng-pristine ng-invalid ng-touched']")).sendKeys("/facebook");
-		}catch(Exception e) {
-		driver.findElement(By.xpath("/html/body/app-root/app-store-layout/div[1]/div/app-product-sections/app-catalog-event/div/form/div[1]/div[2]/div[1]/div[7]/div/div/div/div/div[2]/input")).sendKeys("/facebook");
-		}
 		
+//		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/descendant::form/child::div/child::div[2]/child::div/child::div[6]/following-sibling::div[1]/descendant::div[3]/descendant::div[2]/child::select")));
+//		Select s = new Select(driver.findElement(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/descendant::form/child::div/child::div[2]/child::div/child::div[6]/following-sibling::div[1]/descendant::div[3]/descendant::div[2]/child::select")));
+//		s.selectByIndex(0);
+//				
+//	    List<WebElement> op = s.getOptions();
+//		 		
+//		for(int i=0; i<op.size();i++)
+//		{
+//			
+//			String options = op.get(i).getText();
+//			System.out.println("options are : " + options);
+//			
+//		}
+//		Thread.sleep(1000);
+//		try {
+//		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='form-control ng-pristine ng-invalid ng-touched']")));
+//		driver.findElement(By.xpath("//input[@class='form-control ng-pristine ng-invalid ng-touched']")).sendKeys("/facebook");
+//		}catch(Exception e) {
+//		driver.findElement(By.xpath("/html/body/app-root/app-store-layout/div[1]/div/app-product-sections/app-catalog-event/div/form/div[1]/div[2]/div[1]/div[7]/div/div/div/div/div[2]/input")).sendKeys("/facebook");
+//		}
+//		
 		Thread.sleep(3000);
 				
 		String link = driver.findElement(By.xpath("//p[@class='light-font font-10 mb-1 ng-star-inserted']")).getText();
@@ -182,7 +185,7 @@ public class ACatalog extends BaseClass{
 	@Test(priority=1, description="comparing catalog", groups="compare", enabled=false)
 	public void catalogCompare() throws Exception {
 		
-		  WebDriverWait wait = new WebDriverWait(driver, 20);
+		  WebDriverWait wait = new WebDriverWait(driver, 50);
 		  Actions ac = new Actions(driver);
 		  wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/child::div/child::div[2]//div/descendant::div//div/following-sibling::div/descendant::p[1]")));
 		  List<WebElement> catalogNames = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/child::div/child::div[2]//div/descendant::div//div/following-sibling::div/descendant::p[1]"));
@@ -289,7 +292,7 @@ public class ACatalog extends BaseClass{
 	@Test(priority=3, description="comparing search item catalog", groups="compare", enabled=true)
 	public void catalogSearchCompare() throws Exception {
 		
-		  WebDriverWait wait = new WebDriverWait(driver, 20);
+		  WebDriverWait wait = new WebDriverWait(driver, 50);
 		  Actions ac = new Actions(driver);
 		  wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/child::div/child::div[2]//div/descendant::div//div/following-sibling::div/descendant::p[1]")));
 		  List<WebElement> catalogNames = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open']/child::app-product-sections/child::app-catalogs/child::div/child::div[2]//div/descendant::div//div/following-sibling::div/descendant::p[1]"));

@@ -292,6 +292,7 @@ public class AddProduct extends BaseClass {
 		 }
 	}
 	
+	
 	@Test(priority=4,groups="addproduct")
 	public void sizechart() throws InterruptedException {
 		 // click on size chart
@@ -306,9 +307,9 @@ public class AddProduct extends BaseClass {
 		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("(//span[normalize-space()='Apply Tags'])[1]")));
 		  driver.findElement(By.xpath("(//span[normalize-space()='Apply Tags'])[1]")).click();
 		 //ac.click(tags).build().perform();
-		 Thread.sleep(1000);
-		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-product-sections/child::div/following-sibling::app-add-product/child::div/child::form/child::div[2]/following-sibling::div[2]/descendant::div[2]/child::div[2]/descendant::div[2]/following-sibling::div[4]/descendant::div[2]/following-sibling::div/child::div/descendant::b")));
-		 List<WebElement> tagsTitle = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-product-sections/child::div/following-sibling::app-add-product/child::div/child::form/child::div[2]/following-sibling::div[2]/descendant::div[2]/child::div[2]/descendant::div[2]/following-sibling::div[4]/descendant::div[2]/following-sibling::div/child::div/descendant::b"));
+		 Thread.sleep(2000);
+		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-product-sections/child::div/following-sibling::app-add-product/child::div/child::form/child::div[2]/following-sibling::div[2]/descendant::div[2]/child::div[2]/descendant::div[2]/following-sibling::div[4]/descendant::div[2]/following-sibling::div/child::div/child::div/child::div/child::div[1]/child::span")));
+		 List<WebElement> tagsTitle = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-product-sections/child::div/following-sibling::app-add-product/child::div/child::form/child::div[2]/following-sibling::div[2]/descendant::div[2]/child::div[2]/descendant::div[2]/following-sibling::div[4]/descendant::div[2]/following-sibling::div/child::div/child::div/child::div/child::div[1]/child::span"));
 		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-product-sections/child::div/following-sibling::app-add-product/child::div/child::form/child::div[2]/following-sibling::div[2]/descendant::div[2]/child::div[2]/descendant::div[2]/following-sibling::div[4]/descendant::div[2]/following-sibling::div/child::div/descendant::div[2]/following-sibling::div/child::div")));
 		 List<WebElement> tagsOption = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-product-sections/child::div/following-sibling::app-add-product/child::div/child::form/child::div[2]/following-sibling::div[2]/descendant::div[2]/child::div[2]/descendant::div[2]/following-sibling::div[4]/descendant::div[2]/following-sibling::div/child::div/descendant::div[2]/following-sibling::div/child::div"));
         
@@ -345,14 +346,7 @@ public class AddProduct extends BaseClass {
 		 driver.findElement(By.xpath("(//span[normalize-space()='Apply Foot Note'])[1]")).click();
 		 driver.findElement(By.xpath("//span[contains(text(),'12 inch')]")).click();
 		 
-		 wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe")));
-			
-		 System.out.println("frame found and switched ");
-			
-		 WebElement close = driver.findElement(By.xpath("//div[contains(@class,'win_close sqico-larrow')]"));
-			
-		 ac.moveToElement(close).click().build().perform();
-        
+		       
 		 //Apply FAQ
 		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//span[normalize-space()='Apply FAQ']")));
 		 driver.findElement(By.xpath("//span[normalize-space()='Apply FAQ']")).click();

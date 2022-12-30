@@ -246,7 +246,7 @@ public class MeasurementSets extends BaseClass{
 	       System.err.println("No button isn't clickable");
 	    }
 	
-		driver.findElement(By.xpath("//div[@class='modal-footer']/descendant::span[contains(text(),'No')]")).click();
+		
 		 wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe")));
 			
 		 System.out.println("frame found and switched ");
@@ -257,7 +257,7 @@ public class MeasurementSets extends BaseClass{
 		 System.out.println("closing the frame ");
 		 driver.switchTo().defaultContent();
 		 
-	//	driver.findElement(By.xpath("//div[@class='modal-footer']/descendant::span[contains(text(),'No')]")).click();
+		driver.findElement(By.xpath("//div[@class='modal-footer']/descendant::span[contains(text(),'No')]")).click();
 	}
 
 	

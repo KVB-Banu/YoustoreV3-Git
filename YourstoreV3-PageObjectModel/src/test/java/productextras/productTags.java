@@ -131,17 +131,35 @@ public class productTags extends BaseClass {
 			ac.click(addpro).build().perform();
 			
 			//driver.findElement(By.xpath("//div[@class='top-filter-sec list-button mt-2 ng-tns-c90-2']//button[3]")).click();
+			JavascriptExecutor obj = (JavascriptExecutor) driver;
+			obj.executeScript("window.scrollBy(0,910)");
+			
 			
 			driver.findElement(By.xpath("//span[normalize-space()='Apply Tags']")).click();
 			
+			JavascriptExecutor obj1 = (JavascriptExecutor) driver;
+			obj1.executeScript("window.scrollBy(0,1010)");
 			Thread.sleep(2000);
 			
-			JavascriptExecutor obj = (JavascriptExecutor) driver;
-			obj.executeScript("window.scrollBy(0,810)");
+			
 			
 			List<WebElement> proTags = driver.findElements(By.xpath("//div[@class='main-content-wrap d-flex flex-column sidenav-open top_space']/child::app-product-sections/child::div/following-sibling::app-add-product/child::div/child::form/child::div[2]/following-sibling::div[2]/descendant::div[2]/child::div[2]/descendant::div[2]/following-sibling::div[4]/descendant::div[2]/following-sibling::div/child::div/descendant::b"));
 			System.out.println("size of tags in product page: " + proTags.size());
-			
+			try {
+		    	wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe")));
+				
+				 System.out.println("frame found and switched ");
+					
+				 WebElement close = driver.findElement(By.xpath("//div[contains(@class,'win_close sqico-larrow')]"));
+					
+				 ac.moveToElement(close).click().build().perform();
+				 System.out.println("closing the frame ");
+		    	}catch(Exception e)
+		    	{
+		    		System.out.println("No frame available");
+		    	}
+				 driver.switchTo().defaultContent();
+			 
 		
 			for(int j =0; j< proTags.size(); j++)
 			{
